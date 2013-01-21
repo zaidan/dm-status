@@ -13,7 +13,16 @@ GIT
     listen (0.7.2)
 
 GIT
-  remote: https://github.com/mbj/html
+  remote: https://github.com/mbj/composition.git
+  revision: c8237ea6f8e822edf0eb2fc8d19c7efca8674239
+  specs:
+    composition (0.0.1)
+      adamantium (~> 0.0.5)
+      backports (~> 2.7.0)
+      equalizer (~> 0.0.3)
+
+GIT
+  remote: https://github.com/mbj/html.git
   revision: f1208b2248aa7d2e08077f5fd85a405dfc7bda86
   specs:
     html (0.0.1)
@@ -22,7 +31,7 @@ GIT
       equalizer (~> 0.0.3)
 
 GIT
-  remote: https://github.com/mbj/joy
+  remote: https://github.com/mbj/joy.git
   revision: 83f45195cd44daa84845a3fc8d3cbd39d086dcd3
   specs:
     joy (0.0.1)
@@ -35,7 +44,18 @@ GIT
       tilt (~> 1.3.3)
 
 GIT
-  remote: https://github.com/mbj/response
+  remote: https://github.com/mbj/request.git
+  revision: 48c7682753f4ba3e2759ed0ee9800c182288857b
+  specs:
+    request (0.0.1)
+      abstract_type (~> 0.0.2)
+      adamantium (~> 0.0.1)
+      adamantium (~> 0.0.2)
+      equalizer (~> 0.0.1)
+      ice_nine (~> 0.6.0)
+
+GIT
+  remote: https://github.com/mbj/response.git
   revision: ba45c05f16c51a70d1cb43a8c221b0f63428b343
   specs:
     response (0.0.1)
@@ -176,6 +196,7 @@ PLATFORMS
 
 DEPENDENCIES
   backports (~> 2.7.0)
+  composition!
   devtools!
   flay (~> 1.4.3)
   flog (~> 2.5.3)
@@ -198,6 +219,7 @@ DEPENDENCIES
   rcov (~> 1.0.0)
   redcarpet (~> 2.2.2)
   reek (~> 1.2.13)!
+  request!
   response!
   roodi (~> 2.1.0)
   rspec (~> 2.12.0)
