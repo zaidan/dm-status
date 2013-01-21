@@ -6,7 +6,7 @@ module Status
     end
 
     class Main < self
-      include Adamantium::Flat, Anima.new(:feed, :repositories)
+      include Adamantium::Flat, Anima.new(:repositories)
     end
 
     class NotFound < self
@@ -19,6 +19,16 @@ module Status
   class Action
     include Adamantium::Flat, Joy::Action
 
+  private
+
+    # Return page response
+    #
+    # @param [Hash] attributes
+    #
+    # @return [Response]
+    #
+    # @api private
+    #
     def page_response(attributes)
       view     = View::Page.new(attributes)
       template = Status.application.template('layout.haml')
@@ -59,8 +69,7 @@ module Status
       #
       def response
         view = View::Main.new(
-          :feed         => feed,
-          :repositories => repositories,
+          :repositories => Status.application.repositories,
         )
         template = Status.application.template('main.haml')
         content  = Joy::Renderer.render(template, view)
@@ -71,16 +80,6 @@ module Status
         ).with_status(404)
       end
 
-    private
-
-      def feed
-        []
-      end
-
-      def repositories
-        Status.application.repositories
-      end
     end
-
   end
 end

@@ -65,7 +65,7 @@ module Status
 
     # Initialize object
     #
-    # @reuturn [undefined]
+    # @return [undefined]
     #
     # @api private
     #
@@ -94,6 +94,8 @@ module Status
     #
     # @param [String] url
     # @param [Object] object
+    #
+    # @return [undefined]
     #
     # @api private
     #
