@@ -11,10 +11,12 @@ module Status
     # @api private
     #
     def call(request)
+      path = request.path_info
+
       action =
-        if request.path_info =~ %r(\A/assets/)
+        if path =~ %r(\A/assets/)
           Assets::Server.new(asset_environment, '/assets/')
-        elsif request.path_info == '/'
+        elsif path == '/'
           Action::Main
         else
           Action::NotFound
@@ -85,7 +87,7 @@ module Status
     def asset_rules
       [Assets::Rule::Concat.build(
         'application.css', 
-        asset_repository.compile('stylesheets/screen.sass'),
+        asset_repository.compile('stylesheets/screen.sass')
       )]
     end
 

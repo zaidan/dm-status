@@ -19,6 +19,16 @@ module Status
   class Action
     include Adamantium::Flat, Joy::Action
 
+    # Return application
+    #
+    # @return [Application]
+    #
+    # @api private
+    #
+    def application
+      Status.application
+    end
+
   private
 
     # Return page response
@@ -31,7 +41,7 @@ module Status
     #
     def page_response(attributes)
       view     = View::Page.new(attributes)
-      template = Status.application.template('layout.haml')
+      template = application.template('layout.haml')
       content  = Joy::Renderer.render(template, view)
       Response::HTML.build(content.to_s)
     end
@@ -40,14 +50,13 @@ module Status
 
       # Return response
       #
-      # @return [Array]
-      #   rack compatible response
+      # @return [Response]
       #
       # @api private
       #
       def response
         view     = View::NotFound.new(request)
-        template = Status.application.template('not_found.haml')
+        template = application.template('not_found.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'NotFound', 
@@ -62,22 +71,33 @@ module Status
 
       # Return response
       #
-      # @return [Array]
-      #   rack compatible response
+      # @return [Response]
       #
       # @api private
       #
       def response
         view = View::Main.new(
-          :repositories => Status.application.repositories,
+          :repositories => repositories
         )
-        template = Status.application.template('main.haml')
+        template = application.template('main.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'DataMapper2 - Status', 
           :content          => content,
           :meta_description => 'The DataMapper2 Project-Status Page'
         ).with_status(404)
+      end
+
+    private
+
+      # Return repositories
+      #
+      # @return [Enumerable<Repository>]
+      #
+      # @api private
+      #
+      def repositories
+        application.repositories
       end
 
     end
