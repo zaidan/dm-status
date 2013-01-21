@@ -20,7 +20,7 @@ module Status
         :repositories => repositories,
       )
       template = Status.application.template('application.haml')
-      Response::HTML.build(Joy::Renderer.render(template, view))
+      Response::HTML.build(Joy::Renderer.render(template, view).to_s)
     end
 
   private

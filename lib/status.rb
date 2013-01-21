@@ -1,4 +1,5 @@
 require 'anima'
+require 'response'
 require 'joy'
 
 module Status

@@ -11,7 +11,7 @@ module Status
     # @api private
     #
     def call(env)
-      Action.call(env).to_rack_response
+      Action.call(env)
     end
 
     # Return repository names
@@ -33,7 +33,7 @@ module Status
     # @api private
     #
     def template(name)
-      Tilt::Template.new(template_path.join(name).to_s)
+      Tilt.new(template_path.join(name).to_s)
     end
 
     # Return template path
