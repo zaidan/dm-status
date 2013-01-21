@@ -6,7 +6,7 @@ module Status
     end
 
     class Main < self
-      include Adamantium::Flat, Anima.new(:feed, :repositories)
+      include Adamantium::Flat, Anima.new(:repositories)
     end
 
     class NotFound < self
@@ -19,9 +19,29 @@ module Status
   class Action
     include Adamantium::Flat, Joy::Action
 
+    # Return application
+    #
+    # @return [Application]
+    #
+    # @api private
+    #
+    def application
+      Status.application
+    end
+
+  private
+
+    # Return page response
+    #
+    # @param [Hash] attributes
+    #
+    # @return [Response]
+    #
+    # @api private
+    #
     def page_response(attributes)
       view     = View::Page.new(attributes)
-      template = Status.application.template('layout.haml')
+      template = application.template('layout.haml')
       content  = Joy::Renderer.render(template, view)
       Response::HTML.build(content.to_s)
     end
@@ -30,14 +50,13 @@ module Status
 
       # Return response
       #
-      # @return [Array]
-      #   rack compatible response
+      # @return [Response]
       #
       # @api private
       #
       def response
         view     = View::NotFound.new(request)
-        template = Status.application.template('not_found.haml')
+        template = application.template('not_found.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'NotFound', 
@@ -52,17 +71,15 @@ module Status
 
       # Return response
       #
-      # @return [Array]
-      #   rack compatible response
+      # @return [Response]
       #
       # @api private
       #
       def response
         view = View::Main.new(
-          :feed         => feed,
-          :repositories => repositories,
+          :repositories => repositories
         )
-        template = Status.application.template('main.haml')
+        template = application.template('main.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'DataMapper2 - Status', 
@@ -73,14 +90,16 @@ module Status
 
     private
 
-      def feed
-        []
-      end
-
+      # Return repositories
+      #
+      # @return [Enumerable<Repository>]
+      #
+      # @api private
+      #
       def repositories
-        Status.application.repositories
+        application.repositories
       end
-    end
 
+    end
   end
 end

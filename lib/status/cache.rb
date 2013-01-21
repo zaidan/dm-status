@@ -17,6 +17,14 @@ module Status
       #
       attr_reader :timestamp
 
+      # Return object
+      #
+      # @return [Object]
+      #
+      # @api private
+      #
+      attr_reader :object
+
       # Test if item is fresh
       #
       # @return [true]
@@ -42,7 +50,7 @@ module Status
       # @api private
       #
       def initialize(object)
-        @timestamp = Time.now
+        @timestamp, @object = Time.now, object
       end
     end
 
@@ -65,7 +73,7 @@ module Status
 
     # Initialize object
     #
-    # @reuturn [undefined]
+    # @return [undefined]
     #
     # @api private
     #
@@ -94,6 +102,8 @@ module Status
     #
     # @param [String] url
     # @param [Object] object
+    #
+    # @return [undefined]
     #
     # @api private
     #
