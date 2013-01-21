@@ -15,7 +15,7 @@ CyclomaticComplexityMethodCheck:
 EmptyRescueBodyCheck:            {}
 ForLoopCheck:                    {}
 MethodLineCountCheck:
-  line_count: 8 # TODO decrease to 9
+  line_count: 12 # TODO decrease to 9
 MethodNameCheck:
   pattern: !ruby/regexp /\A(?:[a-z\d](?:_?[a-z\d])+[?!=]?|\[\]=?|==|<=>|<<|[+*&|-])\z/
 ModuleLineCountCheck:

@@ -60,7 +60,8 @@ Duplication:
   max_calls: 1 
 UtilityFunction:
   max_helper_calls: 0 
-  exclude: []
+  exclude: 
+  - Status::Action#application # FIXME: Create routed request and transport application here
   enabled: true
 Attribute:
   exclude: []
