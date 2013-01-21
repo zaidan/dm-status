@@ -2,6 +2,7 @@ require 'anima'
 require 'assets'
 require 'response'
 require 'joy'
+require 'susy'
 
 module Status
 

@@ -5,6 +5,7 @@
         %th Name
         %th Travis
         %th Gemnasium
+        %th Activities
       - repositories.each do |repository|
         %tr
           %td=repository.name
@@ -14,3 +15,5 @@
           %td
             %a{:href => repository.gemnasium_status_href}
               %img{:src => repository.gemnasium_image_src}
+          %td
+            updated 17s
