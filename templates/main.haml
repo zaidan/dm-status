@@ -1,0 +1,16 @@
+#main
+  #repositories
+    %table
+      %tr
+        %th Name
+        %th Travis
+        %th Gemnasium
+      - repositories.each do |repository|
+        %tr
+          %td=repository.name
+          %td
+            %a{:href => repository.travis_status_href}
+              %img{:src => repository.travis_image_src}
+          %td
+            %a{:href => repository.gemnasium_status_href}
+              %img{:src => repository.gemnasium_image_src}

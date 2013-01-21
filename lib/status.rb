@@ -1,4 +1,5 @@
 require 'anima'
+require 'assets'
 require 'response'
 require 'joy'
 
@@ -46,6 +47,5 @@ module Status
 end
 
 require 'status/application'
+require 'status/repository'
 require 'status/action'
-require 'status/presenter'
-require 'status/presenter/repository'

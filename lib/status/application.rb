@@ -4,14 +4,23 @@ module Status
 
     # Call application
     #
-    # @param [Hash] env
+    # @param [Request] request
     #
     # @return [Array]
     # 
     # @api private
     #
-    def call(env)
-      Action.call(env)
+    def call(request)
+      action =
+        if request.path_info =~ %r(\A/assets/)
+          Assets::Server.new(asset_environment, '/assets/')
+        elsif request.path_info == '/'
+          Action::Main
+        else
+          Action::NotFound
+        end
+
+      action.call(request)
     end
 
     # Return repository names
@@ -47,17 +56,6 @@ module Status
     end
     memoize :template_path
 
-    # Return repositories
-    #
-    # @return [Enumerable<Repository>]
-    #
-    # @api private
-    #
-    def repositories
-      repository_names.map { |name| Repository.new(name) }
-    end
-    memoize :repositories
-
     # Return asset repository
     #
     # @return [Assets::Repository]
@@ -66,6 +64,16 @@ module Status
     #
     def asset_repository
       Assets::Repository::Directory.new(root.join('assets'))
+    end
+
+    # Return asset environment
+    #
+    # @return [Assets::Environment]
+    #
+    # @api private
+    #
+    def asset_environment
+      Assets::Environment::Dynamic.new(asset_rules)
     end
 
     # Return asset rules
@@ -81,15 +89,16 @@ module Status
       )]
     end
 
-    # Return asset environment
+    # Return repositories
     #
-    # @return [Assets::Environment]
+    # @return [Enumerable<Repository>]
     #
     # @api private
     #
-    def asset_environment
-      Assets::Environment::Dynamic.new(asset_rules)
+    def repositories
+      repository_names.map { |name| Repository.new(name) }
     end
+    memoize :repositories
 
   end
 end

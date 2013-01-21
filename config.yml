@@ -1,2 +1,17 @@
-repository_names:
-  - datamapper/dm-session
+development:
+  repository_names:
+    - dkubb/adamantium
+    - dkubb/equalizer
+    - dkubb/descendants_tracker
+    - dkubb/abstract_class
+    - mbj/mutant
+    - datamapper/dm-session
+    - dkubb/veritas
+    - dkubb/veritas-sql-generator
+    - dkubb/veritas-optimizer
+    - dkubb/veritas-do-adapter
+    - mbj/veritas-mongo-adapter
+    - mbj/veritas-elasticsearch-adapter
+    - mbj/anima
+    - solnic/virtus
+    - mbj/aequitas

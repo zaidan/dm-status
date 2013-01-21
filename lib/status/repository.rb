@@ -2,27 +2,7 @@ module Status
 
   # A dm-2 related GIT repository (not a dm-2 stuff thing, sorry *g*)
   class Repository
-    include Equalizer.new(:identifier)
-
-    # Return identifier
-    #
-    # @return [Status]
-    #
-    # @api private
-    #
-    attr_reader :identifier
-
-    # Initialize object
-    #
-    # @param [String] identifier
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def initialize(identifier)
-      @identifier = identifier
-    end
+    include Adamantium::Flat, Composition.new(:identifier)
 
     # Return github api url
     #
@@ -35,6 +15,16 @@ module Status
     end
     memoize :github_api_url
 
+    # Return repository name
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def name
+      identifier.split('/', 2).last
+    end
+
     # Return travis api rul
     #
     # @return [Status]
@@ -46,6 +36,49 @@ module Status
     end
     memoize :travis_api_url
 
+    # Return travis status href
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def travis_status_href
+      "https://travis-ci.org/#{identifier}"
+    end
+    memoize :travis_status_href
+
+    # Return travis image src
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def travis_image_src
+      "https://travis-ci.org/#{identifier}.png?branch=master"
+    end
+    memoize :travis_image_src
+
+    # Return gemnasium status href
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def gemnasium_status_href
+      "https://gemnasium.com/#{identifier}"
+    end
+    memoize :gemnasium_status_href
+
+    # Return gemnasium image src
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def gemnasium_image_src
+      "https://gemnasium.com/#{identifier}.png"
+    end
+    memoize :gemnasium_image_src
 
     # Return current github status
     #

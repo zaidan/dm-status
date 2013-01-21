@@ -13,8 +13,25 @@ GIT
     listen (0.7.2)
 
 GIT
+  remote: https://github.com/mbj/assets.git
+  revision: 955f8eea49b17cec9f5f62edd08fa0a4aea49ac7
+  specs:
+    assets (0.0.1)
+      abstract_type (~> 0.0.2)
+      adamantium (~> 0.0.5)
+      anima (~> 0.0.4)
+      backports (~> 2.7.0)
+      descendants_tracker (~> 0.0.1)
+      diff-lcs (~> 1.1.3)
+      equalizer (~> 0.0.3)
+      ice_nine (~> 0.6.0)
+      request (~> 0.0.1)
+      response (~> 0.0.1)
+      sass (~> 3.2.4)
+
+GIT
   remote: https://github.com/mbj/composition.git
-  revision: c8237ea6f8e822edf0eb2fc8d19c7efca8674239
+  revision: 1d3ffcd78235b3ccc2e00a07849acd8a20094572
   specs:
     composition (0.0.1)
       adamantium (~> 0.0.5)
@@ -23,7 +40,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/html.git
-  revision: f1208b2248aa7d2e08077f5fd85a405dfc7bda86
+  revision: c012c18cd9ff035876a4b0c304b43aff7b546194
   specs:
     html (0.0.1)
       adamantium (~> 0.0.5)
@@ -32,7 +49,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/joy.git
-  revision: 5025f3b273c7c0aae3d713ad6c348a1de3b493c8
+  revision: 425de949545ff806e2d00fc7e5808a9a401b0a81
   specs:
     joy (0.0.1)
       abstract_type (~> 0.0.2)
@@ -40,6 +57,7 @@ GIT
       backports (~> 2.7.0)
       equalizer (~> 0.0.1)
       html (~> 0.0.1)
+      ice_nine (~> 0.6.0)
       thin (~> 1.5.0)
       tilt (~> 1.3.3)
 
@@ -171,6 +189,7 @@ GEM
       sexp_processor (~> 3.0)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
+    sass (3.2.5)
     sexp_processor (3.2.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -202,6 +221,7 @@ PLATFORMS
 
 DEPENDENCIES
   anima (~> 0.0.4)
+  assets!
   backports (~> 2.7.0)
   composition!
   devtools!
