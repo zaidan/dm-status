@@ -1,3 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github_api'
+gem 'joy', :path => '../joy'
+
+gem 'devtools', :git => 'https://github.com/datamapper/devtools.git'
+eval File.read('Gemfile.devtools')
