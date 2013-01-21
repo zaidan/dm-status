@@ -1,15 +1,9 @@
 module Status
   # Abstract base class for github api document presenters
   class Presenter
-    include AbstractType, Equalizer.new(:subject)
+    include AbstractType, Composition.new(:subject)
 
-    # Return presented object
-    #
-    # @return [Object]
-    #
-    # @api private
-    #
-    attr_reader :subject
+    ALLOWED_KEYS = [:as].freeze
 
     # Define accessors
     #
@@ -17,22 +11,17 @@ module Status
     #
     # @api private
     #
-    def self.accessor(name, options)
-    end
+    def self.access(name, options)
+      overflow = options.keys - ALLOWED_KEYS
+      unless overflow.empty?
+        raise "Unsupported keys: #{overflow.inspect}"
+      end
 
-    private
-
-
-    # Initialize object
-    #
-    # @param [Object] subject
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def initialize(subject)
-      @subject = subject
+      access_name = options.fetch(:as, name)
+    
+      define_method(access_name) do
+        subject.public_send(name)
+      end
     end
   end
 end

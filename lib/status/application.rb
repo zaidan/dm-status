@@ -24,6 +24,29 @@ module Status
       config.fetch('repository_names')
     end
 
+    # Return template for name
+    #
+    # @param [String] name
+    #
+    # @return [Tilt::Template]
+    # 
+    # @api private
+    #
+    def template(name)
+      Tilt::Template.new(template_path.join(name).to_s)
+    end
+
+    # Return template path
+    #
+    # @return [Pathname]
+    #
+    # @api private
+    #
+    def template_path
+      root.join('templates')
+    end
+    memoize :template_path
+
     # Return repositories
     #
     # @return [Enumerable<Repository>]

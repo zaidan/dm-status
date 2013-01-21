@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/joy.git
-  revision: 83f45195cd44daa84845a3fc8d3cbd39d086dcd3
+  revision: 5025f3b273c7c0aae3d713ad6c348a1de3b493c8
   specs:
     joy (0.0.1)
       abstract_type (~> 0.0.2)
@@ -83,6 +83,11 @@ GEM
     adamantium (0.0.5)
       backports (~> 2.7.0)
       ice_nine (~> 0.6.0)
+    anima (0.0.4)
+      abstract_type (~> 0.0.2)
+      adamantium (~> 0.0.5)
+      backports (~> 2.7.0)
+      equalizer (~> 0.0.3)
     backports (2.7.0)
     coderay (1.0.8)
     daemons (1.1.9)
@@ -195,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anima (~> 0.0.4)
   backports (~> 2.7.0)
   composition!
   devtools!

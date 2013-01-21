@@ -1,6 +1,17 @@
+require 'anima'
 require 'joy'
 
 module Status
+
+  # Return application
+  #
+  # @return [Stoelting::Application]
+  #
+  # @api private
+  #
+  def self.application
+    @application ||= Application.new(Pathname.new(__FILE__).parent.parent, 'status')
+  end
 
   # Fetch resource from cache or locally
   #
@@ -35,4 +46,5 @@ end
 
 require 'status/application'
 require 'status/action'
+require 'status/presenter'
 require 'status/presenter/repository'

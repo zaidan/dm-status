@@ -1,5 +1,9 @@
 module Status
   # The single action that poweres status.datamapper.org
+  class View
+    include Adamantium::Flat, Anima.new(:feed, :repositories)
+  end
+
   class Action
     include Joy::Action
 
@@ -11,12 +15,22 @@ module Status
     # @api private
     #
     def response
-      View.new(
+      view = View.new(
         :feed         => feed,
         :repositories => repositories,
       )
-      Template.new('application.html').render(view)
-      Response::HTML.build()
+      template = Status.application.template('application.haml')
+      Response::HTML.build(Joy::Renderer.render(template, view))
+    end
+
+  private
+
+    def feed
+      []
+    end
+
+    def repositories
+      []
     end
 
   end

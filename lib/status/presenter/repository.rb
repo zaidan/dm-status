@@ -1,9 +1,11 @@
 module Status
   class Presenter
-    # Presenter for repository
+    # A project repositroy
     class Repository < self
 
+      # A github project repository
       class Github < self
+
         # Return href
         #
         # @return [String] href
@@ -11,8 +13,8 @@ module Status
         # @api private
         #
         access(:html_url, :as => :href)
-      end
 
+      end
     end
   end
 end
