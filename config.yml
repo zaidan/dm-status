@@ -6,6 +6,9 @@ development:
     - dkubb/abstract_class
     - mbj/mutant
     - datamapper/dm-session
+    - datamapper/dm-mapper
+    - datamapper/dm-relationship-graph
+    - datamapper/devtools
     - dkubb/veritas
     - dkubb/veritas-sql-generator
     - dkubb/veritas-optimizer
@@ -13,5 +16,6 @@ development:
     - mbj/veritas-mongo-adapter
     - mbj/veritas-elasticsearch-adapter
     - mbj/anima
+    - solnic/coercible
     - solnic/virtus
     - mbj/aequitas
