@@ -49,7 +49,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/joy.git
-  revision: 425de949545ff806e2d00fc7e5808a9a401b0a81
+  revision: 7dff2a885084d2a4ea707b7bbfada379a8d87d69
   specs:
     joy (0.0.1)
       abstract_type (~> 0.0.2)
@@ -74,7 +74,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/response.git
-  revision: ba45c05f16c51a70d1cb43a8c221b0f63428b343
+  revision: 12f285ce366be73a7573c6043c57ad2592d6dbd2
   specs:
     response (0.0.1)
       abstract_type (~> 0.0.2)
@@ -232,6 +232,7 @@ DEPENDENCIES
   anima (~> 0.0.4)
   assets!
   backports (~> 2.7.0)
+  compass
   composition!
   devtools!
   flay (~> 1.4.3)

@@ -3,6 +3,9 @@ require 'assets'
 require 'response'
 require 'joy'
 require 'susy'
+require 'compass'
+
+Sass.load_paths.concat(Compass::Configuration::Data.new('foo').sass_load_paths)
 
 module Status
 

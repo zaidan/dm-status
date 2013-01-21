@@ -8,6 +8,7 @@ gem 'composition', :git => 'https://github.com/mbj/composition.git'
 gem 'assets',      :git => 'https://github.com/mbj/assets.git'
 gem 'haml'
 gem 'susy'
+gem 'compass'
 gem 'anima',       '~> 0.0.4'
 
 gem 'devtools', :git => 'https://github.com/datamapper/devtools.git'
