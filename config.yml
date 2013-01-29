@@ -11,7 +11,7 @@ development:
     - dkubb/veritas-do-adapter
     - datamapper/dm-session
     - datamapper/dm-mapper
-    - datamapper/dm-relationship-graph
+    - datamapper/dm-relation-graph
     - datamapper/devtools
     - solnic/coercible
     - solnic/virtus
