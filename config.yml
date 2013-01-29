@@ -17,7 +17,10 @@ development:
     - solnic/virtus
     - mbj/veritas-mongo-adapter
     - mbj/veritas-elasticsearch-adapter
+    - mbj/veritas-arango-adapter
+    - mbj/aql
     - mbj/anima
     - mbj/mutant
+    - mbj/to_source
     - mbj/aequitas
     - mbj/inflecto
