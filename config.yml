@@ -1,21 +1,23 @@
 development:
   repository_names:
     - dkubb/adamantium
+    - dkubb/ice_nine
     - dkubb/equalizer
     - dkubb/descendants_tracker
     - dkubb/abstract_class
-    - mbj/mutant
-    - datamapper/dm-session
-    - datamapper/dm-mapper
-    - datamapper/dm-relationship-graph
-    - datamapper/devtools
     - dkubb/veritas
     - dkubb/veritas-sql-generator
     - dkubb/veritas-optimizer
     - dkubb/veritas-do-adapter
+    - datamapper/dm-session
+    - datamapper/dm-mapper
+    - datamapper/dm-relationship-graph
+    - datamapper/devtools
+    - solnic/coercible
+    - solnic/virtus
     - mbj/veritas-mongo-adapter
     - mbj/veritas-elasticsearch-adapter
     - mbj/anima
-    - solnic/coercible
-    - solnic/virtus
+    - mbj/mutant
     - mbj/aequitas
+    - mbj/inflecto
