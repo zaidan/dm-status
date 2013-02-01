@@ -1,26 +1,68 @@
+@import compass/reset
 @import susy
 @import compass
 
-$total-columns: 13
+$total-columns: 12
 $grid-padding: 0.7em
 $gutter-width: 0.7em
 $column-width: 4em
 
-$ford-blue: #003C5A
-$nav_bg: #D6D3D3
-$nav-color: #575656
-$orange: #FF7808
-$light-gray: #eeefef
-$ford-color: #0a4c84
 
 body
-  background-color: #D6D3D3
+  //background-color: #ddd
   font-family: arial, helvetica, sans
-  p, ul, dl
+  p, ul, dl, tr
     font-size: 12px
-    margin-bottom: 0.7em
-    margin-top: 0.7em
-  #topnav
+  th
+    font-size: 14px
+  h1
+    font-size: 26px
+    padding-top: 10px
+    padding-bottom: 10px
+    font-family: arial
+    font-weight: bold
+    color: #222
+
+  #topcontainer
+    +background-image(linear-gradient(#ddd, #d6d3d3))
+    background-color: #d6d3d3
+    
+    #topnav
+      +container
+      margin: 0px auto
+      height: 45px
+  #monster
     +container
-    margin: 0px auto
+    margin: 0px auto  
+    margin-top: 0.7em
+    padding: 0px
+    //background-color: white
+    #content
+      +span-columns(8, 12)
+      +border-radius(5px)
+      background-color: #ddd
+      margin: 0px
+      #main
+        overflow: hidden
+        padding: 0.7em
+        #repositories
+          overflow: hidden
+          table
+            width: 100%
+          tbody, tr
+            +span-columns(12)
+            margin: 0px
+          tr
+            //padding: 8px
+            //line-height: 14px
+          td, th
+            +span-columns(2, 8)
+            margin: 0px
+            
+    #right
+      +span-columns(4 omega, 12)
+      +border-radius(5px)
+      background-color: #ddd
+      .wrapper
+        padding: 0.7em
 
