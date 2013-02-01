@@ -50,6 +50,8 @@ module Status
 
 end
 
+require 'status/cache'
 require 'status/application'
 require 'status/repository'
 require 'status/action'
+require 'status/presenter'

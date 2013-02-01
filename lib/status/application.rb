@@ -15,7 +15,7 @@ module Status
 
       action =
         if path =~ %r(\A/assets/)
-          Assets::Server.new(asset_environment, '/assets/')
+          Assets::Handler.new(asset_environment, '/assets/')
         elsif path == '/'
           Action::Main
         else

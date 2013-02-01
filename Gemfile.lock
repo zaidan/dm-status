@@ -7,7 +7,7 @@ GIT
       rake (~> 10.0.3)
 
 GIT
-  remote: https://github.com/guard/listen
+  remote: https://github.com/guard/listen.git
   revision: ac93c7dfffa0400c49d24b13ad0a61981b081f59
   specs:
     listen (0.7.2)
@@ -193,7 +193,6 @@ GEM
       ffi (>= 0.5.0)
     rb-notifu (0.0.4)
     rbench (0.2.3)
-    rcov (1.0.0)
     redcarpet (2.2.2)
     ripper_ruby_parser (0.0.8)
       sexp_processor (~> 3.0)
@@ -265,7 +264,7 @@ DEPENDENCIES
   jruby-openssl (~> 0.8.2)
   libnotify (~> 0.8.0)
   listen (~> 0.7.2)!
-  mutant (~> 0.2.15)
+  mutant (~> 0.2.16)
   pelusa (~> 0.2.2)
   rake (~> 10.0.3)
   rb-fchange (~> 0.0.6)
@@ -273,7 +272,6 @@ DEPENDENCIES
   rb-inotify (~> 0.9.0)
   rb-notifu (~> 0.0.4)
   rbench (~> 0.2.3)
-  rcov (~> 1.0.0)
   redcarpet (~> 2.2.2)
   reek (~> 1.2.13)!
   request!
@@ -285,4 +283,4 @@ DEPENDENCIES
   terminal-notifier-guard (~> 1.5.3)
   yard (~> 0.8.3)
   yard-spellcheck (~> 0.1.5)
-  yardstick (~> 0.9.0)
+  yardstick (~> 0.9.1)

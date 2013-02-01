@@ -77,7 +77,7 @@ module Status
     # @api private
     #
     def github_status
-      Status.fetch(github_api_url, Presenter::Repository::Github)
+      Status.fetch(github_api_url, Presenter::Github)
     end
 
     # Return current travis status
@@ -87,7 +87,7 @@ module Status
     # @api private
     #
     def travis_status
-      Status.fetch(travis_api_url, Presenter::Repository::Travis)
+      Status.fetch(travis_api_url, Presenter::Travis)
     end
   end
 end

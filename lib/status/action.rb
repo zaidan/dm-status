@@ -62,7 +62,7 @@ module Status
           :title            => 'NotFound', 
           :content          => content,
           :meta_description => ''
-        ).with_status(404)
+        ).with_status(Response::Status::NOT_FOUND)
       end
 
     end
@@ -85,7 +85,7 @@ module Status
           :title            => 'DataMapper2 - Status', 
           :content          => content,
           :meta_description => 'The DataMapper2 Project-Status Page'
-        ).with_status(404)
+        ).with_status(Response::Status::OK)
       end
 
     private
