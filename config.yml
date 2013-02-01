@@ -1,5 +1,9 @@
 development:
   repository_names:
+    - datamapper/dm-session
+    - datamapper/dm-mapper
+    - datamapper/dm-relation-graph
+    - datamapper/devtools
     - dkubb/adamantium
     - dkubb/ice_nine
     - dkubb/equalizer
@@ -9,10 +13,6 @@ development:
     - dkubb/veritas-sql-generator
     - dkubb/veritas-optimizer
     - dkubb/veritas-do-adapter
-    - datamapper/dm-session
-    - datamapper/dm-mapper
-    - datamapper/dm-relation-graph
-    - datamapper/devtools
     - solnic/coercible
     - solnic/virtus
     - mbj/veritas-mongo-adapter
