@@ -48,6 +48,28 @@ module Status
     end
     memoize :travis_image_src
 
+    # Return codeclimate status href
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def codeclimate_status_href
+      "https://codeclimate.com/github/#{name}"
+    end
+    memoize :codeclimate_status_href
+
+    # Return gemnasium image src
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def codeclimate_image_src
+      "https://codeclimate.com/github/#{name}.png"
+    end
+    memoize :codeclimate_image_src
+
     # Return gemnasium status href
     #
     # @return [String]

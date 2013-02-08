@@ -5,6 +5,7 @@
         %th Name
         %th Travis
         %th Gemnasium
+        %th Codeclimate
         %th Activities
       - repositories.each do |repository|
         %tr
@@ -15,5 +16,8 @@
           %td
             %a{:href => repository.gemnasium_status_href}
               %img{:src => repository.gemnasium_image_src}
+          %td
+            %a{:href => repository.codeclimate_status_href}
+              %img{:src => repository.codeclimate_image_src}
           %td
             updated 17s
