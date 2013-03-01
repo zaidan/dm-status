@@ -24,8 +24,10 @@ body
     color: #222
 
   #topcontainer
-    +background-image(linear-gradient(#ddd, #d6d3d3))
-    background-color: #d6d3d3
+    //+background-image(linear-gradient(#ddd, #d6d3d3))
+    background-color: black
+    h1
+      color: white
     
     #topnav
       +container
@@ -61,6 +63,8 @@ body
             padding-left: 5px
             //padding-left: 10px
           th
+            +background-image(linear-gradient(#ddd, #d6d3d3))
+            +border-radius(3px)
             font-weight: bold
             font-size: 15px
             padding-bottom: 8px
