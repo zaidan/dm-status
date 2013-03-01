@@ -7,10 +7,10 @@ gem 'request',       :git => 'https://github.com/mbj/request.git'
 gem 'composition',   :git => 'https://github.com/mbj/composition.git'
 gem 'assets',        :git => 'https://github.com/mbj/assets.git'
 gem 'assets-vendor', :git => 'https://github.com/mbj/assets-vendor.git'
+gem 'anima',         :git => 'https://github.com/mbj/anima.git'
 gem 'haml'
 gem 'susy'
 gem 'compass'
-gem 'anima',         '~> 0.0.4'
 
 gem 'devtools', :git => 'https://github.com/datamapper/devtools.git'
 eval File.read('Gemfile.devtools')
