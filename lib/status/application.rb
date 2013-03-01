@@ -65,7 +65,7 @@ module Status
     # @api private
     #
     def asset_repository
-      Assets::Repository::Directory.new(root.join('assets'))
+      Assets::Repository::Directory.new(Status.root.join('assets'))
     end
 
     # Return asset environment

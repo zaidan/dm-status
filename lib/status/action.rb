@@ -41,7 +41,7 @@ module Status
     #
     def page_response(attributes)
       view     = View::Page.new(attributes)
-      template = application.template('layout.haml')
+      template = Status.template('layout.haml')
       content  = Joy::Renderer.render(template, view)
       Response::HTML.build(content.to_s)
     end
@@ -56,7 +56,7 @@ module Status
       #
       def response
         view     = View::NotFound.new(request)
-        template = application.template('not_found.haml')
+        template = Status.template('not_found.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'NotFound', 
@@ -79,7 +79,7 @@ module Status
         view = View::Main.new(
           :repositories => repositories
         )
-        template = application.template('main.haml')
+        template = Status.template('main.haml')
         content  = Joy::Renderer.render(template, view)
         page_response(
           :title            => 'DataMapper2 - Status', 
