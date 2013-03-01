@@ -6,10 +6,13 @@
         %th Travis
         %th Gemnasium
         %th Codeclimate
-        %th Activities
+        %th Rubygems
+        %th Activity
       - repositories.each do |repository|
         %tr
-          %td=repository.short_name
+          %td
+            %a{:href => repository.github_href}
+              = repository.short_name
           %td
             %a{:href => repository.travis_status_href}
               %img{:src => repository.travis_image_src}
@@ -20,4 +23,7 @@
             %a{:href => repository.codeclimate_status_href}
               %img{:src => repository.codeclimate_image_src}
           %td
-            updated 17s
+            %a{:href => repository.rubygems_href}
+              %img{:src => repository.rubygems_image_src}
+          %td
+            17s

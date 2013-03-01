@@ -43,10 +43,21 @@ module Status
     #
     # @api private
     #
-    def rubygems_url
+    def rubygems_href
       "https://rubygems.org/gems/#{name}"
     end
-    memoize :rubygems_url
+    memoize :rubygems_href
+
+    # Return rubygems image src
+    #
+    # @return [String]
+    #
+    # @api privae
+    #
+    def rubygems_image_src
+      "https://badge.fury.io/rb/#{short_name}.png"
+    end
+    memoize :rubygems_image_src
 
     # Return travis api rul
     #
