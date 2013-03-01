@@ -26,6 +26,17 @@ module Status
     end
     memoize :short_name
 
+    # Return rubygems url
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def rubygems_url
+      "https://rubygems.org/gems/#{name}"
+    end
+    memoize :rubygems_url
+
     # Return travis api rul
     #
     # @return [String]
