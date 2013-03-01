@@ -1,12 +1,12 @@
 module Status
 
-  # A dm-2 related GIT repository (not a dm-2 stuff thing, sorry *g*)
+  # A dm-2 related GIT repository (not a dm-2 backed thing, sorry *g*)
   class Repository
     include Adamantium::Flat, Composition.new(:name)
 
     # Return github api url
     #
-    # @return [Status]
+    # @return [String]
     #
     # @api private
     #
@@ -28,7 +28,7 @@ module Status
 
     # Return travis api rul
     #
-    # @return [Status]
+    # @return [String]
     #
     # @api private
     #
