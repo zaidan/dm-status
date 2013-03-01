@@ -26,7 +26,7 @@ module Status
 
       action =
         if path =~ %r(\A/assets/)
-          Assets::Handler.new(asset_environment, '/assets/')
+          assets_handler
         elsif path == '/'
           Action::Main
         else
@@ -35,6 +35,19 @@ module Status
 
       action.call(request)
     end
+
+    # Return repositories
+    #
+    # @return [Enumerable<Repository>]
+    #
+    # @api private
+    #
+    def repositories
+      repository_names.map { |name| Repository.new(name) }
+    end
+    memoize :repositories
+
+  private
 
     # Return repository names
     #
@@ -45,29 +58,6 @@ module Status
     def repository_names
       config.fetch('repository_names')
     end
-
-    # Return template for name
-    #
-    # @param [String] name
-    #
-    # @return [Tilt::Template]
-    # 
-    # @api private
-    #
-    def template(name)
-      Tilt.new(template_path.join(name).to_s)
-    end
-
-    # Return template path
-    #
-    # @return [Pathname]
-    #
-    # @api private
-    #
-    def template_path
-      root.join('templates')
-    end
-    memoize :template_path
 
     # Return asset repository
     #
@@ -89,6 +79,17 @@ module Status
       Assets::Environment::Dynamic.new(asset_rules)
     end
 
+    # Return assets handler
+    #
+    # @return [Assets::Handler]
+    #
+    # @api private
+    #
+    def assets_handler
+      Assets::Handler.new(asset_environment, '/assets/')
+    end
+    memoize :assets_handler
+
     # Return asset rules
     #
     # @return [Enumerable<Asset::Rule>]
@@ -101,17 +102,6 @@ module Status
         asset_repository.compile('stylesheets/screen.sass')
       )]
     end
-
-    # Return repositories
-    #
-    # @return [Enumerable<Repository>]
-    #
-    # @api private
-    #
-    def repositories
-      repository_names.map { |name| Repository.new(name) }
-    end
-    memoize :repositories
 
   end
 end
