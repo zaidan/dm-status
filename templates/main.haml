@@ -9,7 +9,7 @@
         %th Activities
       - repositories.each do |repository|
         %tr
-          %td=repository.name
+          %td=repository.short_name
           %td
             %a{:href => repository.travis_status_href}
               %img{:src => repository.travis_image_src}

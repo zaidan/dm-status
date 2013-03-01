@@ -15,6 +15,17 @@ module Status
     end
     memoize :github_api_url
 
+    # Return short repository name
+    # 
+    # @return [Strings]
+    #
+    # @api private
+    #
+    def short_name
+      name.split('/', 2).last
+    end
+    memoize :short_name
+
     # Return travis api rul
     #
     # @return [Status]
