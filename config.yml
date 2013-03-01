@@ -7,7 +7,7 @@ repository_names:
   - dkubb/ice_nine
   - dkubb/equalizer
   - dkubb/descendants_tracker
-  - dkubb/abstract_class
+  - dkubb/abstract_type
   - dkubb/veritas
   - dkubb/veritas-sql-generator
   - dkubb/veritas-optimizer
