@@ -14,6 +14,17 @@ module Status
       "https://api.github.com/repo/#{name}"
     end
     memoize :github_api_url
+    
+    # Return github href
+    #
+    # @return [String]
+    #
+    # @api private
+    #
+    def github_href
+      "https://api.github.com/#{name}"
+    end
+    memoize :github_href
 
     # Return short repository name
     # 
