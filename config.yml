@@ -25,3 +25,12 @@ repository_names:
   - mbj/to_source
   - mbj/aequitas
   - mbj/inflecto
+team:
+  - name: Dan Kubb
+    nick: dkubb
+  - name: Piotr Solnica
+    nick: solnic
+  - name: Martin Gamsjaeger
+    nick: solnic
+  - name: Markus Schirp
+    nick: mbj
