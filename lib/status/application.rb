@@ -2,17 +2,6 @@ module Status
   # The application environment
   class Application < Joy::Application
 
-    # Initialize application
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def initialize(*)
-      super
-      Status.application = self
-    end
-
     # Call application
     #
     # @param [Request] request

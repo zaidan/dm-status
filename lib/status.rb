@@ -10,32 +10,6 @@ Sass.load_paths.concat(Compass::Configuration::Data.new('foo').sass_load_paths)
 # Namespace for dm-status
 module Status
 
-  # Return application
-  #
-  # @return [Status::Application]
-  #
-  # @api private
-  #
-  def self.application
-    @application || raise("No application set")
-  end
-
-  # Set application
-  #
-  # @param [Status::Application] application
-  #
-  # @return [self]
-  #
-  # @api private
-  #
-  def self.application=(application)
-    if defined?(@application)
-      raise('application is already defined')
-    end
-    @application = application
-    self
-  end
-
   # Return template path
   #
   # @return [Pathname]
