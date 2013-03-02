@@ -12,6 +12,7 @@ repository_names:
   - dkubb/veritas-sql-generator
   - dkubb/veritas-optimizer
   - dkubb/veritas-do-adapter
+  - dkubb/yardstick
   - solnic/coercible
   - solnic/virtus
   - mbj/veritas-mongo-adapter
