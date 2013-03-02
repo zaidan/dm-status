@@ -22,7 +22,7 @@ module Status
           Action::NotFound
         end
 
-      action.call(request)
+      action.call(self, request)
     end
 
     # Return repositories

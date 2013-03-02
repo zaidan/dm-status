@@ -1,16 +1,35 @@
 module Status
-  class View
+  # Base class for template rendering contexts
+  class Context
 
+    # Render context
+    #
+    # @return [HTML::Fragment]
+    #
+    # @api private
+    #
+    def self.render(*args)
+      template = Status.template(self::TEMPLATE)
+      context = new(*args)
+      Joy::Renderer.render(template, context)
+    end
+
+    # Page rendering context
     class Page < self
       include Adamantium::Flat, Anima.new(:title, :meta_description, :content)
+      TEMPLATE = 'layout.haml'.freeze
     end
 
+    # Main context
     class Main < self
       include Adamantium::Flat, Anima.new(:repositories)
+      TEMPLATE = 'main.haml'.freeze
     end
 
+    # Context for not found template
     class NotFound < self
       include Adamantium::Flat, Composition.new(:request)
+      TEMPLATE = 'not_found.haml'.freeze
     end
 
   end
@@ -18,16 +37,6 @@ module Status
   # Abstract base class for actions
   class Action
     include Adamantium::Flat, Joy::Action
-
-    # Return application
-    #
-    # @return [Application]
-    #
-    # @api private
-    #
-    def application
-      Status.application
-    end
 
   private
 
@@ -40,12 +49,11 @@ module Status
     # @api private
     #
     def page_response(attributes)
-      view     = View::Page.new(attributes)
-      template = Status.template('layout.haml')
-      content  = Joy::Renderer.render(template, view)
+      content = Context::Page.render(attributes)
       Response::HTML.build(content.to_s)
     end
 
+    # Action to handle unhandled requests
     class NotFound < self
 
       # Return response
@@ -55,11 +63,9 @@ module Status
       # @api private
       #
       def response
-        view     = View::NotFound.new(request)
-        template = Status.template('not_found.haml')
-        content  = Joy::Renderer.render(template, view)
+        content  = Context::NotFound.render(request)
         page_response(
-          :title            => 'NotFound', 
+          :title            => 'Not Found', 
           :content          => content,
           :meta_description => ''
         ).with_status(Response::Status::NOT_FOUND)
@@ -67,6 +73,7 @@ module Status
 
     end
 
+    # Main action
     class Main < self
 
       # Return response
@@ -76,15 +83,11 @@ module Status
       # @api private
       #
       def response
-        view = View::Main.new(
-          :repositories => repositories
-        )
-        template = Status.template('main.haml')
-        content  = Joy::Renderer.render(template, view)
+        content = Context::Main.render(:repositories => repositories)
         page_response(
           :title            => 'DataMapper2 - Status', 
           :content          => content,
-          :meta_description => 'The DataMapper2 Project-Status Page'
+          :meta_description => 'The DataMapper2 project status page'
         ).with_status(Response::Status::OK)
       end
 
