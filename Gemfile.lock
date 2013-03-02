@@ -60,10 +60,10 @@ GIT
 
 GIT
   remote: https://github.com/mbj/joy.git
-  revision: 8eaba146e45ccebfcf72b88b080f5cf601f32c7d
+  revision: ba619c3192b5dbc9f98a395c3a081530205026e8
   specs:
     joy (0.0.1)
-      abstract_type (~> 0.0.4)
+      abstract_type (~> 0.0.5)
       adamantium (~> 0.0.7)
       equalizer (~> 0.0.5)
       html (~> 0.0.1)
