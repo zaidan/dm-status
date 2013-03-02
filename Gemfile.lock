@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/datamapper/devtools.git
-  revision: f0ee0791230e7b76021c32218abb0ce33033e3e0
+  revision: f083fafbfb25c9d850634cd5f2e06e2a5878a87c
   specs:
     devtools (0.0.1)
 
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/assets.git
-  revision: f1394395da9b1229f8fb6aa73b8ad34df066b8f6
+  revision: 504b903465fe963f78f7b3eeb18ebd959865ae3d
   specs:
     assets (0.0.1)
       abstract_type (~> 0.0.5)
@@ -227,7 +227,7 @@ GEM
     yard-spellcheck (0.1.5)
       ffi-hunspell (~> 0.2)
       yard (~> 0.6)
-    yardstick (0.9.3)
+    yardstick (0.9.4)
       backports (~> 3.0, >= 3.0.3)
       yard (~> 0.8.5)
 
