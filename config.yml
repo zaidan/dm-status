@@ -15,6 +15,7 @@ projects:
   - dkubb/yardstick
   - solnic/coercible
   - solnic/virtus
+  - mbj/dm-status
   - mbj/veritas-mongo-adapter
   - mbj/veritas-elasticsearch-adapter
   - mbj/veritas-arango-adapter
