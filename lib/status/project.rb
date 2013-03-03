@@ -51,7 +51,7 @@ module Status
     #
     # @return [String]
     #
-    # @api privae
+    # @api private
     #
     def rubygems_image_src
       "https://badge.fury.io/rb/#{short_name}.png"

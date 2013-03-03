@@ -40,6 +40,8 @@ module Status
     #
     # @return [Enumerable<Members>]
     #
+    # @api private
+    #
     def members
       config.fetch('team').map do |member|
         Member.new(
@@ -56,6 +58,8 @@ module Status
     # Return sponsors
     #
     # @return [Enuemrable<Sponsor>]
+    #
+    # @api private
     #
     def sponsors
       config.fetch('sponsors').map do |sponsor|
