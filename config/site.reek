@@ -26,7 +26,10 @@ LongParameterList:
   enabled: true
   overrides: {}
 FeatureEnvy:
-  exclude: []
+  exclude:
+  - Status::Action#page_response
+  - Status::Application#members
+  - Status::Application#sponsors
   enabled: true
 ClassVariable:
   exclude: []
@@ -61,7 +64,7 @@ Duplication:
 UtilityFunction:
   max_helper_calls: 0 
   exclude: 
-  - Status::Action#application # FIXME: Create routed request and transport application here
+  - Status::Action#page_response
   enabled: true
 Attribute:
   exclude: []
