@@ -25,16 +25,16 @@ module Status
       action.call(self, request)
     end
 
-    # Return repositories
+    # Return projects
     #
-    # @return [Enumerable<Repository>]
+    # @return [Enumerable<Project>]
     #
     # @api private
     #
-    def repositories
-      repository_names.map { |name| Repository.new(name) }
+    def projects
+      config.fetch('project').map { |name| Project.new(name) }
     end
-    memoize :repositories
+    memoize :projects
 
     # Return team members
     #
@@ -70,16 +70,6 @@ module Status
     memoize :sponsors
 
   private
-
-    # Return repository names
-    #
-    # @return [Enumerable<String>]
-    #
-    # @api private
-    #
-    def repository_names
-      config.fetch('repository_names')
-    end
 
     # Return asset repository
     #

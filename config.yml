@@ -1,4 +1,4 @@
-repository_names:
+projects:
   - datamapper/dm-session
   - datamapper/dm-mapper
   - datamapper/dm-relation-graph

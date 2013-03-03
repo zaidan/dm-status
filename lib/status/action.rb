@@ -22,7 +22,7 @@ module Status
 
     # Main context
     class Main < self
-      include Adamantium::Flat, Anima.new(:repositories)
+      include Adamantium::Flat, Anima.new(:projects)
       TEMPLATE = 'main.haml'.freeze
     end
 
@@ -84,7 +84,7 @@ module Status
       # @api private
       #
       def response
-        content = Context::Main.render(:repositories => repositories)
+        content = Context::Main.render(:projects => projects)
         page_response(
           :title            => 'DataMapper2 - Status', 
           :content          => content,
@@ -94,14 +94,14 @@ module Status
 
     private
 
-      # Return repositories
+      # Return projects
       #
       # @return [Enumerable<Repository>]
       #
       # @api private
       #
-      def repositories
-        application.repositories
+      def projects
+        application.projects
       end
 
     end
