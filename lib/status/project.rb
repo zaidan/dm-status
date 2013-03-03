@@ -21,7 +21,7 @@ module Status
     # @api private
     #
     def github_url
-      "https://api.github.com/#{name}"
+      "https://github.com/#{name}"
     end
     memoize :github_url
 
@@ -43,7 +43,7 @@ module Status
     # @api private
     #
     def rubygems_url
-      "https://rubygems.org/gems/#{name}"
+      "https://rubygems.org/gems/#{short_name}"
     end
     memoize :rubygems_url
 
@@ -65,7 +65,7 @@ module Status
     # @api private
     #
     def travis_api_url
-      "https://api.github.com/repo/#{name}"
+      "https://api.travis-ci.org/repo/#{name}"
     end
     memoize :travis_api_url
 
