@@ -1,0 +1,12 @@
+projects:
+  - foo/bar
+team:
+  - name: John Doe
+    nick: johnd
+    twitter: johnd
+    github: jojnd
+sponsors:
+  - name: Snake Oil Inc
+    url: https://example.com
+    markdown: |
+      The silver bullet!
