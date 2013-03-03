@@ -14,7 +14,7 @@ module Status
       path = request.path_info
 
       action =
-        if path =~ %r(\A/assets/)
+        if path =~ /\A\/assets\//
           ASSET_HANDLER
         elsif path == '/'
           Action::Main
