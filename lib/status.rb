@@ -42,6 +42,19 @@ module Status
     @root ||= Pathname.new(__FILE__).parent.parent
   end
 
+  repository  = Assets::Repository::Directory.new(root.join('assets'))
+
+  rules = [
+    Assets::Rule::Concat.build(
+      'application.css', 
+      repository.compile('stylesheets/screen.sass')
+    )
+  ]
+
+  environment = Assets::Environment::Dynamic.new(rules)
+
+  ASSET_HANDLER = Assets::Handler.new(environment, '/assets/')
+
 end
 
 require 'status/application'

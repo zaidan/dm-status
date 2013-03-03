@@ -15,7 +15,7 @@ module Status
 
       action =
         if path =~ %r(\A/assets/)
-          assets_handler
+          ASSET_HANDLER
         elsif path == '/'
           Action::Main
         else
@@ -72,52 +72,5 @@ module Status
       end
     end
     memoize :sponsors
-
-  private
-
-    # Return asset repository
-    #
-    # @return [Assets::Repository]
-    #
-    # @api private
-    #
-    def asset_repository
-      Assets::Repository::Directory.new(Status.root.join('assets'))
-    end
-
-    # Return asset environment
-    #
-    # @return [Assets::Environment]
-    #
-    # @api private
-    #
-    def asset_environment
-      Assets::Environment::Dynamic.new(asset_rules)
-    end
-
-    # Return assets handler
-    #
-    # @return [Assets::Handler]
-    #
-    # @api private
-    #
-    def assets_handler
-      Assets::Handler.new(asset_environment, '/assets/')
-    end
-    memoize :assets_handler
-
-    # Return asset rules
-    #
-    # @return [Enumerable<Asset::Rule>]
-    #
-    # @api private
-    #
-    def asset_rules
-      [Assets::Rule::Concat.build(
-        'application.css', 
-        asset_repository.compile('stylesheets/screen.sass')
-      )]
-    end
-
   end
 end
