@@ -51,6 +51,7 @@ module Status
         )
       end
     end
+    memoize :members
 
     # Return sponsors
     #
@@ -66,6 +67,7 @@ module Status
         )
       end
     end
+    memoize :sponsors
 
   private
 

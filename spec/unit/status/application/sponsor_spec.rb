@@ -20,6 +20,8 @@ describe Status::Application, '#sponsors' do
     }
   end
 
+  it_should_behave_like 'an idempotent method'
+
   let(:expected_sponsors) do
     [
       Status::Sponsor.new(

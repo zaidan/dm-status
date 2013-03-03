@@ -22,6 +22,8 @@ describe Status::Application, '#members' do
     }
   end
 
+  it_should_behave_like 'an idempotent method'
+
   let(:expected_members) do
     [
       Status::Member.new(
