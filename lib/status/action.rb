@@ -62,7 +62,7 @@ module Status
       # @api private
       #
       def projects
-        application.projects
+        application.projects.sort_by(&:name)
       end
 
     end
