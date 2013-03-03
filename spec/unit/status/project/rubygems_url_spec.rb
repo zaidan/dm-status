@@ -7,5 +7,5 @@ describe Status::Project, '#rubygems_url' do
 
   it_should_behave_like 'an idempotent method'
 
-  it { should eql('https://rubygems.org/gem/dm-status') }
+  it { should eql('https://rubygems.org/gems/dm-status') }
 end

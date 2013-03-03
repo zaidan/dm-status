@@ -43,7 +43,7 @@ module Status
     # @api private
     #
     def rubygems_url
-      "https://rubygems.org/gem/#{short_name}"
+      "https://rubygems.org/gems/#{short_name}"
     end
     memoize :rubygems_url
 
