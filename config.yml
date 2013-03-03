@@ -29,9 +29,24 @@ repository_names:
 team:
   - name: Dan Kubb
     nick: dkubb
+    twitter: dkubb
+    github: dkubb
   - name: Piotr Solnica
     nick: solnic
+    twitter: dkubb
   - name: Martin Gamsjaeger
     nick: solnic
+    twitter: _solnic_
   - name: Markus Schirp
     nick: mbj
+    twitter: _m_b_j_
+sponsors:
+  - name: Triagens
+    url: https://triagens.com
+    markdown: |
+      Triagens sponsored the development of the [veritas-arango-adapter](https://github.com/mbj/veritas-arango-adapter).
+      This allowed @mbj to spend more time on the project.
+  - name: Schirp DSO
+    url: https://schirp-dso.com
+    markdown: |
+      The company lead/owned by @mbj allowed him to spend time on the project. Sometimes to much.
