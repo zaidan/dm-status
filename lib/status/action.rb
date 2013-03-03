@@ -18,6 +18,23 @@ module Status
     class Page < self
       include Adamantium::Flat, Anima.new(:title, :meta_description, :content)
       TEMPLATE = 'layout.haml'.freeze
+
+      DEFAULTS = IceNine.deep_freeze(
+        :title            => 'DataMapper2 - Status',
+        :meta_description => 'The DataMapper2 project status page'
+      )
+
+      # Return new object 
+      #
+      # @param [Hash] attributes
+      #
+      # @return [Page]
+      #
+      # @api private
+      #
+      def self.new(attributes)
+        super(DEFAULTS.merge(attributes))
+      end
     end
 
     # Main context
@@ -85,11 +102,7 @@ module Status
       #
       def response
         content = Context::Main.render(:projects => projects)
-        page_response(
-          :title            => 'DataMapper2 - Status', 
-          :content          => content,
-          :meta_description => 'The DataMapper2 project status page'
-        ).with_status(Response::Status::OK)
+        page_response(:content => content)
       end
 
     private
