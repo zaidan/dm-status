@@ -36,6 +36,22 @@ module Status
     end
     memoize :repositories
 
+    # Return team members
+    #
+    # @return [Enumerable<Members>]
+    #
+    def members
+      config.fetch('team').map do |member|
+        Member.new(
+          :name             => member.fetch('name'),
+          :nick             => member.fetch('nick'),
+          :github_username  => member.fetch('github'),
+          :twitter_username => member['twitter'],
+          :url              => member['url']
+        )
+      end
+    end
+
     # Return sponsors
     #
     # @return [Enuemrable<Sponsor>]
