@@ -11,19 +11,19 @@
       - projects.each do |project|
         %tr
           %td
-            %a{:href => project.github_href}
+            %a{:href => project.github_url}
               = project.short_name
           %td
-            %a{:href => project.travis_status_href}
+            %a{:href => project.travis_status_url}
               %img{:src => project.travis_image_src}
           %td
-            %a{:href => project.gemnasium_status_href}
+            %a{:href => project.gemnasium_status_url}
               %img{:src => project.gemnasium_image_src}
           %td
-            %a{:href => project.codeclimate_status_href}
+            %a{:href => project.codeclimate_status_url}
               %img{:src => project.codeclimate_image_src}
           %td
-            %a{:href => project.rubygems_href}
+            %a{:href => project.rubygems_url}
               %img{:src => project.rubygems_image_src}
           %td
             \--

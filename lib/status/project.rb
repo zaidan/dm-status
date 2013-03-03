@@ -14,16 +14,16 @@ module Status
     end
     memoize :github_api_url
     
-    # Return github href
+    # Return github project url
     #
     # @return [String]
     #
     # @api private
     #
-    def github_href
+    def github_url
       "https://api.github.com/#{name}"
     end
-    memoize :github_href
+    memoize :github_url
 
     # Return short repository name
     # 
@@ -42,10 +42,10 @@ module Status
     #
     # @api private
     #
-    def rubygems_href
+    def rubygems_url
       "https://rubygems.org/gems/#{name}"
     end
-    memoize :rubygems_href
+    memoize :rubygems_url
 
     # Return rubygems image src
     #
@@ -75,10 +75,10 @@ module Status
     #
     # @api private
     #
-    def travis_status_href
+    def travis_status_url
       "https://travis-ci.org/#{name}"
     end
-    memoize :travis_status_href
+    memoize :travis_status_url
 
     # Return travis image src
     #
@@ -97,10 +97,10 @@ module Status
     #
     # @api private
     #
-    def codeclimate_status_href
+    def codeclimate_status_url
       "https://codeclimate.com/github/#{name}"
     end
-    memoize :codeclimate_status_href
+    memoize :codeclimate_status_url
 
     # Return gemnasium image src
     #
@@ -119,10 +119,10 @@ module Status
     #
     # @api private
     #
-    def gemnasium_status_href
+    def gemnasium_status_url
       "https://gemnasium.com/#{name}"
     end
-    memoize :gemnasium_status_href
+    memoize :gemnasium_status_url
 
     # Return gemnasium image src
     #
