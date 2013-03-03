@@ -1,7 +1,6 @@
 module Status
-
-  # A dm-2 related GIT repository (not a dm-2 backed thing, sorry *g*)
-  class Repository
+  # A dm2 related project
+  class Project
     include Adamantium::Flat, Composition.new(:name)
 
     # Return github api url
@@ -135,25 +134,5 @@ module Status
       "https://gemnasium.com/#{name}.png"
     end
     memoize :gemnasium_image_src
-
-    # Return current github status
-    #
-    # @return [Presenter::Repository::Github]
-    #
-    # @api private
-    #
-    def github_status
-      Status.fetch(github_api_url, Presenter::Github)
-    end
-
-    # Return current travis status
-    #
-    # @return [Presenter::Prepository::Travis]
-    #
-    # @api private
-    #
-    def travis_status
-      Status.fetch(travis_api_url, Presenter::Travis)
-    end
   end
 end

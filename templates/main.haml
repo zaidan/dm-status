@@ -1,5 +1,5 @@
 #main
-  #repositories
+  #projects
     %table
       %tr
         %th Name
@@ -8,22 +8,22 @@
         %th Codeclimate
         %th Rubygems
         %th Activity
-      - repositories.each do |repository|
+      - projects.each do |project|
         %tr
           %td
-            %a{:href => repository.github_href}
-              = repository.short_name
+            %a{:href => project.github_href}
+              = project.short_name
           %td
-            %a{:href => repository.travis_status_href}
-              %img{:src => repository.travis_image_src}
+            %a{:href => project.travis_status_href}
+              %img{:src => project.travis_image_src}
           %td
-            %a{:href => repository.gemnasium_status_href}
-              %img{:src => repository.gemnasium_image_src}
+            %a{:href => project.gemnasium_status_href}
+              %img{:src => project.gemnasium_image_src}
           %td
-            %a{:href => repository.codeclimate_status_href}
-              %img{:src => repository.codeclimate_image_src}
+            %a{:href => project.codeclimate_status_href}
+              %img{:src => project.codeclimate_image_src}
           %td
-            %a{:href => repository.rubygems_href}
-              %img{:src => repository.rubygems_image_src}
+            %a{:href => project.rubygems_href}
+              %img{:src => project.rubygems_image_src}
           %td
-            17s
+            \--

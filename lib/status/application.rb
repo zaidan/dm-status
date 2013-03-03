@@ -32,7 +32,7 @@ module Status
     # @api private
     #
     def projects
-      config.fetch('project').map { |name| Project.new(name) }
+      config.fetch('projects').map { |name| Project.new(name) }
     end
     memoize :projects
 
