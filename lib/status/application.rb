@@ -14,9 +14,10 @@ module Status
       path = request.path_info
 
       action =
-        if path =~ /\A\/assets\//
+        case path
+        when /\A\/assets\//
           ASSET_HANDLER
-        elsif path == '/'
+        when '/'
           Action::Main
         else
           Action::NotFound
