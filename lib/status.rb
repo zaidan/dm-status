@@ -47,3 +47,4 @@ end
 require 'status/application'
 require 'status/repository'
 require 'status/action'
+require 'status/sponsor'

@@ -36,6 +36,21 @@ module Status
     end
     memoize :repositories
 
+    # Return sponsors
+    #
+    # @return [Enuemrable<Sponsor>]
+    #
+    def sponsors
+      config.fetch('sponsors').map do |sponsor|
+        Sponsor.new(
+          :name     => sponsor.fetch('name'),
+          :url      => sponsor.fetch('url'),
+          :logo     => sponsor['logo'],
+          :markdown => sponsor['markdown']
+        )
+      end
+    end
+
   private
 
     # Return repository names
