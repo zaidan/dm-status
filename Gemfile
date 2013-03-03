@@ -5,7 +5,6 @@ gem 'response',      :git => 'https://github.com/mbj/response.git'
 gem 'request',       :git => 'https://github.com/mbj/request.git'
 gem 'composition',   :git => 'https://github.com/mbj/composition.git'
 gem 'assets',        :git => 'https://github.com/mbj/assets.git'
-gem 'assets-vendor', :git => 'https://github.com/mbj/assets-vendor.git'
 
 gem 'html',          '~> 0.0.1'
 gem 'haml',          '~> 4.0.0'

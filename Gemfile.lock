@@ -5,13 +5,6 @@ GIT
     devtools (0.0.1)
 
 GIT
-  remote: https://github.com/mbj/assets-vendor.git
-  revision: 8b2866f7b18c06de16fde665944ca8a357cd41db
-  specs:
-    assets-vendor (0.0.1)
-      assets (~> 0.0.1)
-
-GIT
   remote: https://github.com/mbj/assets.git
   revision: 504b903465fe963f78f7b3eeb18ebd959865ae3d
   specs:
@@ -249,7 +242,6 @@ PLATFORMS
 DEPENDENCIES
   anima (~> 0.0.6)
   assets!
-  assets-vendor!
   capybara (~> 2.0.2)
   compass (~> 0.12.2)
   composition!
