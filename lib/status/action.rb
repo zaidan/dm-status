@@ -70,6 +70,7 @@ module Status
           :meta_description => ''
         ).with_status(Response::Status::NOT_FOUND)
       end
+      memoize :response
 
     end
 
