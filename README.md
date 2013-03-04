@@ -1,5 +1,5 @@
-AQL
-===
+dm-status
+=========
 
 [![Build Status](https://secure.travis-ci.org/mbj/dm-status.png?branch=master)](http://travis-ci.org/mbj/dm-status)
 [![Dependency Status](https://gemnasium.com/mbj/dm-status.png)](https://gemnasium.com/mbj/dm-status)
