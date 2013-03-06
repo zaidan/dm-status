@@ -22,6 +22,8 @@ projects:
   - mbj/veritas-fuzzer
   - mbj/veritas-sexp
   - mbj/aql
+  - mbj/concord
+  - mbj/elasticsearch
   - mbj/anima
   - mbj/mutant
   - mbj/to_source
