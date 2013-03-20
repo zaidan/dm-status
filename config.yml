@@ -1,3 +1,6 @@
+page: 
+  title: DataMapper2 - Yeah it's beautiful code!
+  meta_description: 
 projects:
   - datamapper/dm-session
   - datamapper/dm-mapper
@@ -12,6 +15,8 @@ projects:
   - dkubb/veritas-sql-generator
   - dkubb/veritas-optimizer
   - dkubb/veritas-do-adapter
+  - dkubb/yardstick
+  - dkubb/axiom-types
   - dkubb/yardstick
   - solnic/coercible
   - solnic/virtus
