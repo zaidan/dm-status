@@ -8,6 +8,7 @@ describe Status::Context, '.render' do
   let(:attributes) { 
     { 
       :title            => 'TITLE', 
+      :heading          => 'HEADING',
       :meta_description => 'META', 
       :content          => 'CONTENT'
     }

@@ -5,12 +5,12 @@ describe Status::Action::Main, '#response' do
 
   subject { object.response }
 
-  let(:application) { mock('Application', :projects => [], :sponsors => []) }
-  let(:request)     { mock('Request')     }
+  let(:application) { Spec.application }
+  let(:request)     { mock('Request')  }
   
   its(:status) { should be(Response::Status::OK) }
   its(:body) do 
-    content = Status::Context::Main.render(:projects => [])
-    should eql(Status::Context::Page.render(:content => content).to_s)
+    content = Status::Context::Main.render(:projects => Spec.application.projects)
+    should eql(Status::Context::Page.render(Spec.application.page_attributes.merge(:content => content)).to_s)
   end
 end

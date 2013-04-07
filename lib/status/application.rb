@@ -56,6 +56,19 @@ module Status
     end
     memoize :members
 
+    # Return page attributes
+    #
+    # @return [Hash]
+    #
+    # @api private
+    #
+    def page_attributes
+      config.fetch('page_attributes').each_with_object({}) do |(key, value), hash|
+        hash[key.to_sym] = value
+      end
+    end
+    memoize :page_attributes
+
     # Return sponsors
     #
     # @return [Enuemrable<Sponsor>]

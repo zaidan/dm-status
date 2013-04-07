@@ -14,7 +14,7 @@ module Status
     # @api private
     #
     def page_response(attributes)
-      content = Context::Page.render(attributes)
+      content = Context::Page.render(application.page_attributes.merge(attributes))
       Response::HTML.build(content.to_s)
     end
 
@@ -30,9 +30,8 @@ module Status
       def response
         content  = Context::NotFound.render(request)
         page_response(
-          :title            => 'Not Found', 
-          :content          => content,
-          :meta_description => ''
+          :title   => 'Not Found',
+          :content => content
         ).with_status(Response::Status::NOT_FOUND)
       end
       memoize :response

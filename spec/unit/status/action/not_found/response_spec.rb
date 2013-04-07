@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Status::Action::NotFound, '#response' do
-  let(:object) { described_class.new(application, request) }
-  let(:application) { mock('Application')                        }
+  let(:object) { described_class.new(application, request)       }
+  let(:application) { Spec.application                           }
   let(:request)     { mock('Request', :path_info => '/the/path') }
 
   subject { object.response }

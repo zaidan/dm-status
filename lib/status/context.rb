@@ -17,25 +17,8 @@ module Status
 
     # Page rendering context
     class Page < self
-      include Adamantium::Flat, Anima.new(:title, :meta_description, :content)
+      include Adamantium::Flat, Anima.new(:title, :heading, :meta_description, :content)
       TEMPLATE = 'layout.haml'.freeze
-
-      DEFAULTS = IceNine.deep_freeze(
-        :title            => 'DataMapper2 - Status',
-        :meta_description => 'The DataMapper2 project status page'
-      )
-
-      # Return new object 
-      #
-      # @param [Hash] attributes
-      #
-      # @return [Page]
-      #
-      # @api private
-      #
-      def self.new(attributes)
-        super(DEFAULTS.merge(attributes))
-      end
     end
 
     # Main context
@@ -46,7 +29,7 @@ module Status
 
     # Context for not found template
     class NotFound < self
-      include Adamantium::Flat, Composition.new(:request)
+      include Adamantium::Flat, Concord.new(:request)
       TEMPLATE = 'not_found.haml'.freeze
     end
 

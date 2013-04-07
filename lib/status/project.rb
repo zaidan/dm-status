@@ -1,7 +1,7 @@
 module Status
   # A dm2 related project
   class Project
-    include Adamantium::Flat, Composition.new(:name)
+    include Adamantium::Flat, Concord.new(:name)
 
     # Return github api url
     #
