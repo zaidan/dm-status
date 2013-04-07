@@ -28,7 +28,8 @@ begin
       end
     end
   end
-end rescue LoadError
+rescue LoadError
+end 
 
 Devtools.init_spec_helper
 
