@@ -1,32 +1,34 @@
 require 'devtools'
 require 'status'
 
-# Mutant monkey patch
-require 'mutant'
-# TODO: Remove this with newer mutant!
-module Mutant
-  class Matcher
-    class ObjectSpace
+begin
+  # Mutant monkey patch
+  require 'mutant'
+  # TODO: Remove this with newer mutant!
+  module Mutant
+    class Matcher
+      class ObjectSpace
 
-      # Yield scope if name matches pattern
-      #
-      # @param [::Module,::Class] scope
-      #
-      # @return [undefined]
-      #
-      # @api private
-      #
-      def emit_scope(scope)
-        return unless [::Module, ::Class].include?(scope.class) 
-        return unless scope.name.is_a?(String)
-        if @scope_name_pattern =~ scope.name 
-          yield scope 
+        # Yield scope if name matches pattern
+        #
+        # @param [::Module,::Class] scope
+        #
+        # @return [undefined]
+        #
+        # @api private
+        #
+        def emit_scope(scope)
+          return unless [::Module, ::Class].include?(scope.class) 
+          return unless scope.name.is_a?(String)
+          if @scope_name_pattern =~ scope.name 
+            yield scope 
+          end
         end
-      end
 
+      end
     end
   end
-end
+end rescue LoadError
 
 Devtools.init_spec_helper
 
