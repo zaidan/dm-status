@@ -11,7 +11,7 @@ gem 'anima',         '~> 0.0.6'
 gem 'concord',       '~> 0.0.3'
 
 group :development, :test do
-  gem 'capybara', '~> 2.0.2'
+  gem 'capybara', '~> 2.1.0'
 end
 
 group :assets do
