@@ -34,6 +34,7 @@ projects:
   - mbj/to_source
   - mbj/aequitas
   - mbj/inflecto
+  - mbj/ducktrap
 team:
   - name: Dan Kubb
     nick: dkubb
