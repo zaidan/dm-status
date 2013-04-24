@@ -4,7 +4,8 @@ page:
 projects:
   - datamapper/dm-session
   - datamapper/dm-mapper
-  - datamapper/dm-relation-graph
+  # Undecided future
+  # - datamapper/dm-relation-graph
   - datamapper/devtools
   - dkubb/adamantium
   - dkubb/ice_nine
