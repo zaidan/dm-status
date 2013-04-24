@@ -4,6 +4,7 @@ require 'response'
 require 'joy'
 require 'susy'
 require 'compass'
+require 'haml'
 
 Sass.load_paths.concat(Compass::Configuration::Data.new('foo').sass_load_paths)
 
