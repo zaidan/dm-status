@@ -32,6 +32,7 @@ projects:
   - mbj/elasticsearch
   - mbj/anima
   - mbj/mutant
+  - mbj/unparser
   - mbj/to_source
   - mbj/aequitas
   - mbj/inflecto
