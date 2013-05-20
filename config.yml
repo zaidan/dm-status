@@ -29,7 +29,7 @@ projects:
   - mbj/axiom-sexp
   - mbj/aql
   - mbj/concord
-  - mbj/elasticsearch
+  - mbj/esearch
   - mbj/anima
   - mbj/mutant
   - mbj/unparser
