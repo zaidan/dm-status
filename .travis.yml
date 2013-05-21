@@ -4,10 +4,6 @@ rvm:
   - 1.9.3
   - 2.0.0
   - ruby-head
-# Dont build under jrubies until thin is not mandatory anymore
-#  - jruby-18mode
-#  - jruby-19mode
-#  - jruby-head
   - rbx-19mode
 notifications:
   irc: "irc.freenode.org#datamapper"
