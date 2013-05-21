@@ -29,7 +29,7 @@ module Status
 
     # Context for not found template
     class NotFound < self
-      include Adamantium::Flat, Concord.new(:request)
+      include Adamantium::Flat, Concord::Public.new(:request)
       TEMPLATE = 'not_found.haml'.freeze
     end
 
