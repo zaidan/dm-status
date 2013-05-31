@@ -1,6 +1,7 @@
 page: 
   title: DataMapper2 - Yeah it's beautiful code!
   meta_description: 
+  heading:
 projects:
   - datamapper/dm-session
   - datamapper/dm-mapper
