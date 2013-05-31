@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/mbj/assets.git
-  revision: dde2cb5c334a77527f2c9a0808d07cc434eeec3b
+  revision: a27a9ac49ca4aad41e70d1c50c52f4ae45dfaa3e
   specs:
     assets (0.0.2)
       abstract_type (~> 0.0.5)
@@ -15,7 +15,7 @@ GIT
       anima (~> 0.0.5)
       backports (~> 3.0, >= 3.0.3)
       coffee-script (~> 2.2.0)
-      concord (~> 0.1.0)
+      concord (~> 0.1.1)
       descendants_tracker (~> 0.0.1)
       equalizer (~> 0.0.5)
       ice_nine (~> 0.7.0)
@@ -43,7 +43,7 @@ GIT
 
 GIT
   remote: https://github.com/troessner/reek.git
-  revision: 79e1b9bb5400d5aba172cbab5e65531daab24b3e
+  revision: f302390f533dd6b59f837821d63249d0c729f931
   specs:
     reek (1.3.1)
       ruby2ruby (~> 2.0.2)
@@ -63,7 +63,7 @@ GEM
       adamantium (~> 0.0.6)
       backports (~> 3.0, >= 3.0.3)
       equalizer (~> 0.0.4)
-    backports (3.3.0)
+    backports (3.3.1)
     capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -122,7 +122,7 @@ GEM
     guard-rspec (2.5.4)
       guard (>= 1.1)
       rspec (~> 2.11)
-    haml (4.0.2)
+    haml (4.0.3)
       tilt
     html (0.0.1)
       adamantium (~> 0.0.7)
@@ -140,7 +140,7 @@ GEM
     lumberjack (1.0.3)
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.3)
+    multi_json (1.7.4)
     mutant (0.2.20)
       abstract_type (~> 0.0.3)
       adamantium (~> 0.0.7)
