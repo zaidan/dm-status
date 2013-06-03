@@ -33,7 +33,12 @@ module Status
     # @api private
     #
     def projects
-      config.fetch('projects').map { |name| Project.new(name) }
+      config.fetch('projects').map do |project|
+        Project.new(
+          project.fetch('name'),
+          project['tags']
+        )
+      end
     end
     memoize :projects
 

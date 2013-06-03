@@ -58,6 +58,7 @@ module Status
 
 end
 
+require 'status/tag'
 require 'status/application'
 require 'status/project'
 require 'status/action'

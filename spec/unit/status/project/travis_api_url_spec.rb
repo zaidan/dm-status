@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe Status::Project, '#travis_api_url' do
-  let(:object) { described_class.new('mbj/dm-status') }
+  let(:object) { described_class.new('mbj/dm-status', tags) }
+  let(:tags)   { mock('')                                   }
 
   subject { object.travis_api_url }
 

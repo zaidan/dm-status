@@ -3,7 +3,11 @@ page:
   heading:          It is specified stuff
   meta_description: The status page for the spec project
 projects:
-  - foo/bar
+  - 
+    name: foo/bar
+    tags: 
+      - tag1
+      - tag2
 team:
   - name: John Doe
     nick: johnd

@@ -3,41 +3,75 @@ page:
   meta_description: 
   heading:
 projects:
-  - datamapper/dm-session
-  - datamapper/dm-mapper
+  - 
+    name: datamapper/dm-session
+  - 
+    name: datamapper/dm-mapper
   # Undecided future
-  # - datamapper/dm-relation-graph
-  - datamapper/devtools
-  - dkubb/adamantium
-  - dkubb/ice_nine
-  - dkubb/equalizer
-  - dkubb/descendants_tracker
-  - dkubb/abstract_type
-  - dkubb/axiom
-  - dkubb/axiom-sql-generator
-  - dkubb/axiom-optimizer
-  - dkubb/axiom-do-adapter
-  - dkubb/yardstick
-  - dkubb/axiom-types
-  - dkubb/yardstick
-  - solnic/coercible
-  - solnic/virtus
-  - mbj/dm-status
-  - mbj/axiom-mongo-adapter
-  - mbj/axiom-elasticsearch-adapter
-  - mbj/axiom-arango-adapter
-  - mbj/axiom-fuzzer
-  - mbj/axiom-sexp
-  - mbj/aql
-  - mbj/concord
-  - mbj/esearch
-  - mbj/anima
-  - mbj/mutant
-  - mbj/unparser
-  - mbj/to_source
-  - mbj/aequitas
-  - mbj/inflecto
-  - mbj/ducktrap
+  #- 
+  #  name: datamapper/dm-relation-graph
+  - 
+    name: datamapper/devtools
+  - 
+    name: dkubb/adamantium
+  - 
+    name: dkubb/ice_nine
+  - 
+    name: dkubb/equalizer
+  - 
+    name: dkubb/descendants_tracker
+  - 
+    name: dkubb/abstract_type
+  - 
+    name: dkubb/axiom
+  - 
+    name: dkubb/axiom-sql-generator
+  - 
+    name: dkubb/axiom-optimizer
+  - 
+    name: dkubb/axiom-do-adapter
+  - 
+    name: dkubb/yardstick
+  - 
+    name: dkubb/axiom-types
+  - 
+    name: dkubb/yardstick
+  - 
+    name: solnic/coercible
+  - 
+    name: solnic/virtus
+  - 
+    name: mbj/dm-status
+  - 
+    name: mbj/axiom-mongo-adapter
+  - 
+    name: mbj/axiom-elasticsearch-adapter
+  - 
+    name: mbj/axiom-arango-adapter
+  - 
+    name: mbj/axiom-fuzzer
+  - 
+    name: mbj/axiom-sexp
+  - 
+    name: mbj/aql
+  - 
+    name: mbj/concord
+  - 
+    name: mbj/esearch
+  - 
+    name: mbj/anima
+  - 
+    name: mbj/mutant
+  - 
+    name: mbj/unparser
+  - 
+    name: mbj/to_source
+  - 
+    name: mbj/aequitas
+  - 
+    name: mbj/inflecto
+  - 
+    name: mbj/ducktrap
 team:
   - name: Dan Kubb
     nick: dkubb

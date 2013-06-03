@@ -1,7 +1,7 @@
 module Status
   # A dm2 related project
   class Project
-    include Adamantium::Flat, Concord.new(:name)
+    include Adamantium::Flat, Concord.new(:name, :tags)
 
     # Return github api url
     #
@@ -134,5 +134,16 @@ module Status
       "https://gemnasium.com/#{name}.png"
     end
     memoize :gemnasium_image_src
+
+    # Return tags
+    #
+    # @return [Enumerable<Tag>]
+    #
+    # @api private
+    #
+    def tags
+      @tags.map { |tag| Tag.new(tag) }
+    end
+    memoize :tags
   end
 end
