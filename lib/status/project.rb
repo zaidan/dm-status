@@ -142,7 +142,7 @@ module Status
     # @api private
     #
     def tags
-      @tags.map { |tag| Tag.new(tag) }
+      @tags.map { |tag| Tag.new(:name => tag) }
     end
     memoize :tags
   end

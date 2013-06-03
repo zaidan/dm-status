@@ -5,7 +5,7 @@ describe Status::Project, '#tags' do
   let(:name)   { mock('')                         }
   let(:tags)   { ['tag']                          }
 
-  let(:tag)    { Status::Tag.new('tag')           }
+  let(:tag)    { Status::Tag.new(:name => 'tag')  }
 
   subject      { object.tags                      }
 

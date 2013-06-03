@@ -1,6 +1,6 @@
 module Status
   # A project tag
   class Tag
-    include Adamantium::Flat, Concord.new(:name)
+    include Anima.new(:name)
   end
 end

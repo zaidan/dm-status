@@ -36,7 +36,7 @@ module Status
       config.fetch('projects').map do |project|
         Project.new(
           project.fetch('name'),
-          project['tags']
+          project.fetch('tags', [])
         )
       end
     end
