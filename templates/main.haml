@@ -12,6 +12,9 @@
           %td
             %a{:href => project.github_url}
               = project.short_name
+            - project.tags.each do |tag|
+              %a{:class => 'tag', :href => "/?tag=#{tag.name}"}
+                = tag.name
           %td
             %a{:href => project.travis_status_url}
               %img{:src => project.travis_image_src}

@@ -42,6 +42,8 @@ projects:
     name: solnic/virtus
   - 
     name: mbj/dm-status
+    tags:
+      - Status
   - 
     name: mbj/axiom-mongo-adapter
   - 
