@@ -3,9 +3,10 @@ require 'spec_helper'
 describe Status::Application, '#call' do
   let(:object) { described_class.new(config) }
 
-  let(:config)   { mock('Config')                      }
-  let(:response) { mock('Response')                    }
-  let(:request)  { mock('Request', :path_info => path) }
+  let(:config)   { mock('Config')                                                  }
+  let(:response) { mock('Response')                                                }
+  let(:request)  { mock('Request', :path_info => path, :query_params_hash => get ) }
+  let(:get)      { {}                                                              }
 
   this_spec = 'Status::Application#call'
 
@@ -21,6 +22,14 @@ describe Status::Application, '#call' do
   context 'with request to "/"' do
     let(:path)            { "/"                  }
     let(:expected_action) { Status::Action::Main }
+
+    it_should_behave_like this_spec
+  end
+
+  context 'with request to "/" and tag' do
+    let(:get)             { { 'tag' => 'foo' }    }
+    let(:path)            { "/"                  }
+    let(:expected_action) { Status::Action::Tag  }
 
     it_should_behave_like this_spec
   end

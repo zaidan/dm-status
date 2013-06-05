@@ -18,11 +18,10 @@ module Status
         when /\A\/assets\//
           ASSET_HANDLER
         when '/'
-          Action::Main
+          route(request)
         else
           Action::NotFound
         end
-
       action.call(self, request)
     end
 
@@ -91,5 +90,17 @@ module Status
       end
     end
     memoize :sponsors
+
+  private
+
+    # Return Action class
+    # 
+    # @return [Class]
+    #
+    # @api private
+    # 
+    def route(request)
+      request.query_params_hash.has_key?('tag') ? Action::Tag : Action::Main
+    end
   end
 end

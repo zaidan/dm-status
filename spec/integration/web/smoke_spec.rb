@@ -5,6 +5,11 @@ feature 'smoky smoky' do
     visit('/')
     page.status_code.should be(200)
   end
+  
+  scenario 'visiting tag' do
+    visit('/?tag=foo')
+    page.status_code.should be(200)
+  end
 
   scenario 'visiting not found' do
     visit('/not-found')
