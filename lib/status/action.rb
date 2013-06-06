@@ -78,7 +78,7 @@ module Status
       # @api private
       #
       def projects
-        application.projects.select{ |project| project.has_tag?(tag) }
+        application.projects.select{ |project| project.has_tag(tag) }
       end
 
       # Return tag

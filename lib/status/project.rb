@@ -156,7 +156,7 @@ module Status
     #
     # @api private
     #
-    def has_tag?(name)
+    def has_tag(name)
       tags.any?{ |tag| tag.name == name }
     end
   end

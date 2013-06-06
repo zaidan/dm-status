@@ -12,7 +12,7 @@ describe Status::Action::Tag, '#response' do
 
   its(:status) { should be(Response::Status::OK) }
   its(:body) do
-    projects = Spec.application.projects.select { |project| project.has_tag?(tag) }
+    projects = [Spec.application.projects.first]
     content = Status::Context::Main.render(:projects => projects)
     should eql(Status::Context::Page.render(Spec.application.page_attributes.merge(:content => content)).to_s)
   end
