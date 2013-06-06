@@ -8,7 +8,7 @@ UncommunicativeParameterName:
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
 TooManyMethods:
-  max_methods: 13 # Todo decrease to 10
+  max_methods: 14 # Todo decrease to 10
   exclude: []
   enabled: true
   max_instance_variables: 3

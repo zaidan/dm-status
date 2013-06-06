@@ -11,18 +11,7 @@ module Status
     # @api private
     #
     def call(request)
-      path = request.path_info
-
-      action =
-        case path
-        when /\A\/assets\//
-          ASSET_HANDLER
-        when '/'
-          route(request)
-        else
-          Action::NotFound
-        end
-      action.call(self, request)
+      Router.new(request).route(self)
     end
 
     # Return projects
@@ -90,17 +79,90 @@ module Status
       end
     end
     memoize :sponsors
+    
+    # Route request to actions
+    class Router
+      include Adamantium::Flat, Concord.new(:request)
+      
+      # Route request
+      # 
+      # @param [Object] object
+      #
+      # @return [Class]
+      #
+      # @api private
+      # 
+      def route(object)
+        action.call(object, request)
+      end
 
-  private
+    private
+      
+      # Return Action class
+      # 
+      # @return [Class]
+      #
+      # @api private
+      # 
+      def action
+        case path_info
+        when /\A\/assets\//
+            Status::ASSET_HANDLER
+        when '/'
+            main_action
+        else
+          Action::NotFound
+        end
+      end
+      
+      # Return Main Action class
+      # 
+      # @return [Class]
+      #
+      # @api private
+      # 
+      def main_action
+        has_tag_key? ? Action::Tag : Action::Main
+      end
+      memoize :main_action
+      
+      # Return request path info
+      # 
+      # @return [String]
+      #
+      # @api private
+      # 
+      def path_info 
+        request.path_info
+      end
+      memoize :path_info
 
-    # Return Action class
-    # 
-    # @return [Class]
-    #
-    # @api private
-    # 
-    def route(request)
-      request.query_params_hash.has_key?('tag') ? Action::Tag : Action::Main
+
+      # Return requery params hash
+      # 
+      # @return [Hash]
+      #
+      # @api private
+      # 
+      def query_params_hash
+        request.query_params_hash
+      end
+      memoize :query_params_hash
+
+      # Check if query params hash has tag key
+      # 
+      # @return [true]
+      #   if query params hash has tag
+      #
+      # @return [false]
+      #   otherwise
+      #
+      # @api private
+      # 
+      def has_tag_key?
+        query_params_hash.has_key?('tag')
+      end
+      memoize :has_tag_key?
     end
   end
 end
