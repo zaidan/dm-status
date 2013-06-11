@@ -50,6 +50,10 @@ module Status
     Assets::Rule::Concat.build(
       'application.css', 
       repository.compile('stylesheets/screen.sass')
+    ),
+    Assets::Rule::Concat.build(
+      'application.js', 
+      repository.compile('js/tags.coffee')
     )
   ]
 

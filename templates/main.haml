@@ -1,29 +1,31 @@
 #main
-  #projects
-    %table
+  #reset
+    %a(href="javascript:show()")
+      Show all
+  %table{:id => 'projects'}
+    %tr
+      %th Name
+      %th Travis
+      %th Gemnasium
+      %th Codeclimate
+      %th Rubygems
+    - projects.each do |project|
       %tr
-        %th Name
-        %th Travis
-        %th Gemnasium
-        %th Codeclimate
-        %th Rubygems
-      - projects.each do |project|
-        %tr
-          %td
-            %a{:href => project.github_url}
-              = project.short_name
-            - project.tags.each do |tag|
-              %a{:class => 'tag', :href => "/?tag=#{tag.name}"}
-                = tag.name
-          %td
-            %a{:href => project.travis_status_url}
-              %img{:src => project.travis_image_src}
-          %td
-            %a{:href => project.gemnasium_status_url}
-              %img{:src => project.gemnasium_image_src}
-          %td
-            %a{:href => project.codeclimate_status_url}
-              %img{:src => project.codeclimate_image_src}
-          %td
-            %a{:href => project.rubygems_url}
-              %img{:src => project.rubygems_image_src}
+        %td
+          %a{:href => project.github_url}
+            = project.short_name
+          - project.tags.each do |tag|
+            %a{:class => 'tag', :href => "javascript:showTag('#{tag.name}')"}
+              = tag.name
+        %td
+          %a{:href => project.travis_status_url}
+            %img{:src => project.travis_image_src}
+        %td
+          %a{:href => project.gemnasium_status_url}
+            %img{:src => project.gemnasium_image_src}
+        %td
+          %a{:href => project.codeclimate_status_url}
+            %img{:src => project.codeclimate_image_src}
+        %td
+          %a{:href => project.rubygems_url}
+            %img{:src => project.rubygems_image_src}
