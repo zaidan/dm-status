@@ -22,6 +22,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency('html',          '~> 0.0.1')
   gem.add_dependency('request',       '~> 0.0.2')
   gem.add_dependency('response',      '~> 0.0.2')
+  gem.add_dependency('susy',          '~> 1.0.5')
+  gem.add_dependency('compass',       '~> 0.12.2')
 
   gem.executables = [ 'status-build' ]
 end
