@@ -1,11 +1,11 @@
-dm-status
+rom-status
 =========
 
-[![Build Status](https://secure.travis-ci.org/mbj/dm-status.png?branch=master)](http://travis-ci.org/mbj/dm-status)
-[![Dependency Status](https://gemnasium.com/mbj/dm-status.png)](https://gemnasium.com/mbj/dm-status)
-[![Code Climate](https://codeclimate.com/github/mbj/dm-status.png)](https://codeclimate.com/github/mbj/dm-status)
+[![Build Status](https://secure.travis-ci.org/mbj/rom-status.png?branch=master)](http://travis-ci.org/mbj/rom-status)
+[![Dependency Status](https://gemnasium.com/mbj/rom-status.png)](https://gemnasium.com/mbj/rom-status)
+[![Code Climate](https://codeclimate.com/github/mbj/rom-status.png)](https://codeclimate.com/github/mbj/rom-status)
 
-A small status site for datamappper 2. It is backed by some experiments for a web application toolchain.
+A small status site for ROM (Ruby Object Mapper). It is backed by some experiments for a web application toolchain.
 
 * [request](https://github.com/mbj/request)
 * [response](https://github.com/mbj/response)
@@ -27,7 +27,7 @@ gem 'rom-status', :git => 'https://github.com/mbj/rom-status.git'
 * Create config.yml
 * Run `status-build` to build your status page
 
-Running dm-status
+Running rom-status
 -----------------
 
 ```
