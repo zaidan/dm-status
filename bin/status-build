@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+# Build status page from config.yml
+
+require 'status'
+
+$: << 'lib'
+dir = ARGV[0] ? Dir.new(ARGV[0]) : Dir.pwd
+Status::Builder.new(dir).build
+
