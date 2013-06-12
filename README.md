@@ -13,6 +13,20 @@ A small status site for datamappper 2. It is backed by some experiments for a we
 * [assets](https://github.com/mbj/assets)
 * [html](https://github.com/mbj/html)
 
+
+Usage
+-----------------
+
+* Add to Gemfile:
+
+```
+gem 'joy',        :git => 'https://github.com/mbj/joy.git'
+gem 'assets',     :git => 'https://github.com/mbj/assets.git'
+gem 'rom-status', :git => 'https://github.com/mbj/rom-status.git'
+```
+* Create config.yml
+* Run `status-build` to build your status page
+
 Running dm-status
 -----------------
 
@@ -21,7 +35,7 @@ Running dm-status
 git clone https://github.com/mbj/dm-status
 cd dm-status
 bundle install
-bundle exec ruby run.rb
+joy-runner status
 ```
 
 And steer a browser to `localhost:3000` the port and bind IP is currently not configurable.
@@ -30,6 +44,7 @@ Credits
 -------
 
 * [Markus Schirp (mbj)](https://github.com/mbj) Author
+* [Firas Zaidan (zaidan)](https://github.com/zaidan)
 
 Contributing
 -------------
