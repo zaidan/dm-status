@@ -4,7 +4,6 @@ gem 'joy',           :git => 'https://github.com/mbj/joy.git'
 gem 'response',      '~> 0.0.2'
 gem 'request',       '~> 0.0.3'
 gem 'assets',        :git => 'https://github.com/mbj/assets.git'
-gem 'addressable'
 
 gem 'html',          '~> 0.0.1'
 gem 'haml',          '~> 4.0.0'

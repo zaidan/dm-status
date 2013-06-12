@@ -5,7 +5,6 @@ require 'joy'
 require 'susy'
 require 'compass'
 require 'haml'
-require 'addressable/uri'
 
 Sass.load_paths.concat(Compass::Configuration::Data.new('foo').sass_load_paths)
 
@@ -57,9 +56,9 @@ module Status
     )
   ]
 
-  environment = Assets::Environment::Dynamic.new(rules)
+  ASSET_ENVIRONMENT = Assets::Environment::Dynamic.new(rules)
 
-  ASSET_HANDLER = Assets::Handler.new(environment, '/assets/')
+  ASSET_HANDLER = Assets::Handler.new(ASSET_ENVIRONMENT, '/assets/')
 
 end
 
@@ -70,3 +69,4 @@ require 'status/action'
 require 'status/sponsor'
 require 'status/member'
 require 'status/context'
+require 'status/builder'
