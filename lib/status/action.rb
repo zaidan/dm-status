@@ -65,31 +65,5 @@ module Status
       end
 
     end
-    
-    # Main action
-    class Tag < Main
-
-    private
-
-      # Return projects
-      #
-      # @return [Enumerable<Repository>]
-      #
-      # @api private
-      #
-      def projects
-        application.projects.select{ |project| project.has_tag(tag) }
-      end
-
-      # Return tag
-      #
-      # @return [String]
-      #
-      # @api private
-      #
-      def tag
-        request.query_params_hash['tag']
-      end
-    end
   end
 end

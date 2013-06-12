@@ -145,19 +145,5 @@ module Status
       @tags.map { |tag| Tag.new(:name => tag) }
     end
     memoize :tags
-
-    # Check if project has tag with given name
-    #
-    # @return [true]
-    #   if project has tag with given name
-    #
-    # @return [false]
-    #   otherwise
-    #
-    # @api private
-    #
-    def has_tag(name)
-      tags.any?{ |tag| tag.name == name }
-    end
   end
 end

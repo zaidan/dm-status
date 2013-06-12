@@ -109,22 +109,11 @@ module Status
         when /\A\/assets\//
             Status::ASSET_HANDLER
         when '/'
-            main_action
+            Action::Main
         else
           Action::NotFound
         end
       end
-      
-      # Return Main Action class
-      # 
-      # @return [Class]
-      #
-      # @api private
-      # 
-      def main_action
-        has_tag_key? ? Action::Tag : Action::Main
-      end
-      memoize :main_action
       
       # Return request path info
       # 
@@ -148,21 +137,6 @@ module Status
         request.query_params_hash
       end
       memoize :query_params_hash
-
-      # Check if query params hash has tag key
-      # 
-      # @return [true]
-      #   if query params hash has tag
-      #
-      # @return [false]
-      #   otherwise
-      #
-      # @api private
-      # 
-      def has_tag_key?
-        query_params_hash.has_key?('tag')
-      end
-      memoize :has_tag_key?
     end
   end
 end

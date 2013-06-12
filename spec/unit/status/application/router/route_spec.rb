@@ -3,10 +3,9 @@ require 'spec_helper'
 describe Status::Application::Router, '#route' do
   let(:object) { described_class.new(request) }
 
-  let(:application) { mock('Application')                                             }
-  let(:response)    { mock('Response')                                                }
-  let(:request)     { mock('Request', :path_info => path, :query_params_hash => get ) }
-  let(:get)         { {}                                                              }
+  let(:application) { mock('Application')                 }
+  let(:response)    { mock('Response')                    }
+  let(:request)     { mock('Request', :path_info => path) }
   
   this_spec = 'Status::Application::Router#route'
 
@@ -32,22 +31,6 @@ describe Status::Application::Router, '#route' do
   context 'with request to "/"' do
     let(:path)            { "/"                  }
     let(:expected_action) { Status::Action::Main }
-
-    it_should_behave_like this_spec
-  end
-
-  context 'with request to "/" and tag' do
-    let(:get)             { { 'tag' => 'foo' }    }
-    let(:path)            { "/"                   }
-    let(:expected_action) { Status::Action::Tag   }
-
-    it_should_behave_like this_spec
-  end
-
-  context 'with request to "/" and other get parameter' do
-    let(:get)             { { 'other' => 'foo' }    }
-    let(:path)            { "/"                     }
-    let(:expected_action) { Status::Action::Main    }
 
     it_should_behave_like this_spec
   end
