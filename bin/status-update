@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+# Update status page from config.yml
+
+require 'status'
+
+dir = ARGV[0] ? Dir.new(ARGV[0]) : Dir.pwd
+Status::Builder::Updater.new(dir).build
+
