@@ -25,7 +25,9 @@ gem 'assets',     :git => 'https://github.com/mbj/assets.git'
 gem 'rom-status', :git => 'https://github.com/mbj/rom-status.git'
 ```
 * Create config.yml
-* Run `status-build` to build your status page
+* Run `status-build` to build and `status-update` to update your status page
+
+Note: `status-update` keeps your css file, `status-build` will overwrite them.
 
 Running rom-status
 -----------------
