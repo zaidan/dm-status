@@ -96,6 +96,17 @@ module Status
       'assets/'
     end
 
+    # Return asset environment index
+    #
+    # @return [Hash<Rule>]
+    #
+    # @api private
+    #
+    def asset_env_index
+      ASSET_ENVIRONMENT.index
+    end
+    memoize :asset_env_index
+
     # Compile assets
     #
     # @return [self]
@@ -103,7 +114,7 @@ module Status
     # @api private
     #
     def compile_assets
-      ASSET_ENVIRONMENT.index.each do |name, rule|
+      asset_env_index.each do |name, rule|
         File.write(path.join(assets_prefix, name), rule.body)
       end
 

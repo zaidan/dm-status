@@ -31,6 +31,7 @@ FeatureEnvy:
   - Status::Application#members
   - Status::Application#projects
   - Status::Application#sponsors
+  - Status::Builder::Updater#asset_env_index
   enabled: true
 ClassVariable:
   exclude: []
@@ -66,6 +67,8 @@ UtilityFunction:
   max_helper_calls: 0 
   exclude: 
   - Status::Action#page_response
+  - Status::Builder#asset_env_index
+  - Status::Builder::Updater#asset_env_index
   enabled: true
 Attribute:
   exclude: []
