@@ -9,6 +9,7 @@ gem 'html',          '~> 0.0.1'
 gem 'haml',          '~> 4.0.0'
 gem 'anima',         '~> 0.0.6'
 gem 'concord',       '~> 0.1.1'
+gem 'thor',          '~> 0.18.1'
 
 group :development, :test do
   gem 'capybara', '~> 2.1.0'
