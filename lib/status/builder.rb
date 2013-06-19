@@ -1,7 +1,7 @@
 module Status
   # Build status page from config.yml as index.html with assets
   class Builder
-    include Adamantium::Flat, Concord.new(:dir)
+    include Adamantium::Flat, Concord.new(:target, :config)
 
     # Build page
     #
@@ -10,8 +10,8 @@ module Status
     # @api private
     #
     def build
-      write_index_page
       create_assets_dir
+      write_index_page
       compile_assets
     end
 
@@ -24,7 +24,7 @@ module Status
     # @api private
     #
     def path
-      Pathname.new(dir)
+      Pathname.new(target)
     end
     memoize :path
 
@@ -36,7 +36,7 @@ module Status
     # @api private
     #
     def application
-      Application.build_from_config_path(path.join('config.yml'))
+      Application.build_from_config_path(config)
     end
     memoize :application
 

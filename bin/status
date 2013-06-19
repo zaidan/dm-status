@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# CLI to build and update status page from config.yml
+
+require 'status'
+require "thor"
+
+# Status CLI
+class StatusCLI < Thor
+  class_option :config, :type => :string, :aliases => :c, :default => "#{Dir.pwd}/config.yml"
+
+  desc "build [target]", "builds status page"
+  def build(target=Dir.pwd)
+    Status::Builder.new(target, options[:config]).build
+  end
+
+  desc "update [target]", "updates status page"
+  def update(target=Dir.pwd)
+    Status::Builder::Updater.new(target, options[:config]).build
+  end
+end
+
+StatusCLI.start(ARGV)

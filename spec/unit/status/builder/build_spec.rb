@@ -4,14 +4,11 @@ describe Status::Builder, '#build' do
 
   let(:path)   { Pathname.new(Dir.pwd).expand_path('../../../../').join("build") }
 
-  let(:object) { Status::Builder.new(path)                                       }
+  let(:object) { described_class.new(path, config)                               }
+
+  let(:config) { File.join(File.expand_path('..', path), 'spec', 'config.yml')   }
 
   subject      { object.build                                                    }
-
-  before do
-    FileUtils.mkdir_p path
-    FileUtils.cp(File.join(File.expand_path('..', path), 'spec/', 'config.yml'), path)
-  end
 
   after do
     FileUtils.rm_rf path

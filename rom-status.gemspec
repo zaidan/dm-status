@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name        = 'rom-status'
-  gem.version     = '0.0.2'
+  gem.version     = '0.0.3'
   gem.authors     = [ 'Markus Schirp' ]
   gem.email       = [ 'mbj@seonic.net' ]
   gem.description = 'A small status site'
@@ -25,5 +25,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('susy',          '~> 1.0.5')
   gem.add_dependency('compass',       '~> 0.12.2')
 
-  gem.executables = [ 'status-build', 'status-update' ]
+  gem.executables = [ 'status' ]
 end
