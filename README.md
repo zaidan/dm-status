@@ -17,7 +17,7 @@ A small status site for ROM (Ruby Object Mapper). It is backed by some experimen
 Demo
 -----
 
-There is a demo hosted as gh-pages site, see [rom-status example site](http://zaidan.github.io/rom-status-example/).
+There is a demo hosted as GitHub Page, see [rom-status example site](http://zaidan.github.io/rom-status-example/).
 
 Usage
 ------
