@@ -14,19 +14,16 @@ A small status site for ROM (Ruby Object Mapper). It is backed by some experimen
 * [html](https://github.com/mbj/html)
 
 
+Demo
+-----
+
+There is a demo hosted as gh-pages site, see [rom-status example site](http://zaidan.github.io/rom-status-example/).
+
 Usage
------------------
+------
 
-* Add to Gemfile:
-
-```
-gem 'joy',        :git => 'https://github.com/mbj/joy.git'
-gem 'request',    :git => 'https://github.com/mbj/request.git'
-gem 'response',   :git => 'https://github.com/mbj/response.git'
-gem 'assets',     :git => 'https://github.com/mbj/assets.git'
-gem 'rom-status', :git => 'https://github.com/mbj/rom-status.git'
-```
-* Create config.yml
+* just fork [rom-status-example](https://github.com/zaidan/rom-status-example)
+* Create/modify config.yml
 * Run `status build` to build and `status update` to update your status page
 
 Note: `status update` keeps your css files, `status build` will overwrite them.
