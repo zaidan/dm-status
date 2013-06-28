@@ -56,7 +56,7 @@ module Status
 
       # Return projects
       #
-      # @return [Enumerable<Repository>]
+      # @return [Enumerable<Project>]
       #
       # @api private
       #
