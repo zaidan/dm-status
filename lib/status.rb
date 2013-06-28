@@ -5,6 +5,7 @@ require 'joy'
 require 'susy'
 require 'compass'
 require 'haml'
+require 'descendants_tracker'
 
 Sass.load_paths.concat(Compass::Configuration::Data.new('foo').sass_load_paths)
 
@@ -70,4 +71,9 @@ require 'status/sponsor'
 require 'status/member'
 require 'status/context'
 require 'status/builder'
+require 'status/plugin'
+require 'status/plugin/rubygems'
+require 'status/plugin/travis'
+require 'status/plugin/codeclimate'
+require 'status/plugin/gemnasium'
 require 'status/builder/updater'

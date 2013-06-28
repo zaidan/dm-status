@@ -1,7 +1,7 @@
 module Status
   # A dm2 related project
   class Project
-    include Adamantium::Flat, Concord.new(:name, :tags)
+    include Adamantium::Flat, Concord.new(:name, :tag_names)
 
     # Return github api url
     #
@@ -36,104 +36,16 @@ module Status
     end
     memoize :short_name
 
-    # Return rubygems url
+    # Return plugins
     #
-    # @return [String]
-    #
-    # @api private
-    #
-    def rubygems_url
-      "https://rubygems.org/gems/#{short_name}"
-    end
-    memoize :rubygems_url
-
-    # Return rubygems image src
-    #
-    # @return [String]
+    # @return [Enumerable<Plugin>]
     #
     # @api private
     #
-    def rubygems_image_src
-      "https://badge.fury.io/rb/#{short_name}.png"
+    def plugins
+      Plugin.descendants.map { |plugin| plugin.new(name, short_name) }
     end
-    memoize :rubygems_image_src
-
-    # Return travis api rul
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def travis_api_url
-      "https://api.travis-ci.org/repo/#{name}"
-    end
-    memoize :travis_api_url
-
-    # Return travis status href
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def travis_status_url
-      "https://travis-ci.org/#{name}"
-    end
-    memoize :travis_status_url
-
-    # Return travis image src
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def travis_image_src
-      "https://travis-ci.org/#{name}.png?branch=master"
-    end
-    memoize :travis_image_src
-
-    # Return codeclimate status href
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def codeclimate_status_url
-      "https://codeclimate.com/github/#{name}"
-    end
-    memoize :codeclimate_status_url
-
-    # Return gemnasium image src
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def codeclimate_image_src
-      "https://codeclimate.com/github/#{name}.png"
-    end
-    memoize :codeclimate_image_src
-
-    # Return gemnasium status href
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def gemnasium_status_url
-      "https://gemnasium.com/#{name}"
-    end
-    memoize :gemnasium_status_url
-
-    # Return gemnasium image src
-    #
-    # @return [String]
-    #
-    # @api private
-    #
-    def gemnasium_image_src
-      "https://gemnasium.com/#{name}.png"
-    end
-    memoize :gemnasium_image_src
+    memoize :plugins
 
     # Return tags
     #
@@ -142,7 +54,7 @@ module Status
     # @api private
     #
     def tags
-      @tags.map { |tag| Tag.new(:name => tag) }
+      tag_names.map { |tag| Tag.new(:name => tag) }
     end
     memoize :tags
   end

@@ -5,10 +5,9 @@
   %table{:id => 'projects'}
     %tr
       %th Name
-      %th Travis
-      %th Gemnasium
-      %th Codeclimate
-      %th Rubygems
+      - ::Status::Plugin.titles.each do |title|
+        %th
+          = title
     - projects.each do |project|
       %tr
         %td
@@ -17,15 +16,7 @@
           - project.tags.each do |tag|
             %a{:class => 'tag', :href => "javascript:showTag('#{tag.name}')"}
               = tag.name
-        %td
-          %a{:href => project.travis_status_url}
-            %img{:src => project.travis_image_src}
-        %td
-          %a{:href => project.gemnasium_status_url}
-            %img{:src => project.gemnasium_image_src}
-        %td
-          %a{:href => project.codeclimate_status_url}
-            %img{:src => project.codeclimate_image_src}
-        %td
-          %a{:href => project.rubygems_url}
-            %img{:src => project.rubygems_image_src}
+        - project.plugins.each do |plugin|
+          %td
+            %a{:href => plugin.url}
+              %img{:src => plugin.image_src}

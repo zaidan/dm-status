@@ -18,7 +18,7 @@ describe Status::Builder, '#build' do
     subject
 
     should be object
-    File.size(path.join('index.html')).should == 3121
+    File.size(path.join('index.html')).should == 3257
     File.size(path.join('assets', 'application.css')).should == 4376
     File.size(path.join('assets', 'application.js')).should == 678
   end
