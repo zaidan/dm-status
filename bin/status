@@ -7,8 +7,9 @@ require "thor"
 
 # Status CLI
 class StatusCLI < Thor
-  class_option :config, :type => :string, :aliases => :c, :default => "#{Dir.pwd}/config.yml"
-
+  class_option :config,  :type => :string, :aliases => :c, :default => "#{Dir.pwd}/config.yml"
+  class_option :plugins, :type => :string, :aliases => :p, :default => "#{Dir.pwd}/plugins"
+  
   desc "build [target]", "builds status page"
   def build(target=Dir.pwd)
     Status::Builder.new(target, options[:config]).build
@@ -17,6 +18,43 @@ class StatusCLI < Thor
   desc "update [target]", "updates status page"
   def update(target=Dir.pwd)
     Status::Builder::Updater.new(target, options[:config]).build
+  end
+  
+private
+
+  # Initialize object
+  # 
+  # @param [Array<Object>] args
+  #   An array of objects. The objects are applied to their
+  #   respective accessors declared with <tt>argument</tt>.
+  #
+  # @param [Hash] options
+  #   An options hash that will be available as self.options.
+  #
+  # @param [Hash] config
+  #   Configuration for this Thor class.
+  # 
+  # @return [undefined]
+  # 
+  # @api private
+  # 
+  def initialize(args=[], options={}, config={})
+    super
+    
+    require_plugins
+  end
+
+  # Require plugins
+  #
+  # @return [self]
+  #
+  # @api private
+  #
+  def require_plugins
+    $: << self.options[:plugins]
+    Dir["#{self.options[:plugins]}/*.rb"].each {|file| require File.basename(file) }
+
+    self
   end
 end
 
